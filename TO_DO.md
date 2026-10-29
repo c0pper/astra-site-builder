@@ -1,0 +1,2 @@
+1. ~~Can't we use stock photos for a gallery?~~ Answered 2026-10-29: yes on spec sites, labelled "Immagini illustrative"; live sites use client photos only (docs/DESIGN.md › Images).
+Still thin: the tyre-shop pack has 11 photos against the ~15 target. That's enough for one site, but similar sites will repeat images more often. It's worth topping up when better photos turn up.
