@@ -1,0 +1,53 @@
+{
+  "status": "live",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "business": {
+    "name": "Pneumatici Esempio",
+    "legalName": "Pneumatici Esempio S.r.l.",
+    "vatNumber": "01234567890",
+    "address": { "street": "Via degli Esempi, 3", "postalCode": "81100", "city": "Caserta", "province": "CE" },
+    "geo": { "lat": 41.0742, "lng": 14.3328 },
+    "phone": "0823 000 000",
+    "whatsapp": "+39 333 000 0000",
+    "email": "info@example.com",
+    "hours": {
+      "mon": [{ "open": "08:00", "close": "18:00" }],
+      "tue": [{ "open": "08:00", "close": "18:00" }],
+      "wed": [{ "open": "08:00", "close": "18:00" }],
+      "thu": [{ "open": "08:00", "close": "18:00" }],
+      "fri": [{ "open": "08:00", "close": "18:00" }],
+      "sat": [{ "open": "08:00", "close": "13:00" }],
+      "sun": []
+    },
+    "seasonalClosures": [{ "from": "2027-08-09", "to": "2027-08-23", "note": "Ferie estive" }]
+  },
+  "theme": { "brandColors": { "primary": "#0b5394" }, "variants": { "services": "list" } },
+  "copy": {
+    "headline": "Pneumatici e assistenza a Caserta",
+    "tagline": "Cambio gomme, equilibratura e convergenza.",
+    "about": "Pneumatici Esempio è un'officina specializzata in pneumatici.\n\nTi aiutiamo a scegliere la gomma giusta per la tua auto."
+  },
+  "automotive": {
+    "services": [
+      { "name": "Cambio gomme", "description": "Montaggio e smontaggio di pneumatici estivi e invernali." },
+      { "name": "Equilibratura" },
+      { "name": "Convergenza" }
+    ],
+    "booking": { "url": "https://example.com/prenota" }
+  },
+  "sources": {
+    "business.name": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.legalName": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.vatNumber": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.address": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.geo": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.phone": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.whatsapp": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.email": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.hours": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "business.seasonalClosures": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "automotive.services": { "retrieved": "2026-10-29", "confidence": "verified" },
+    "automotive.booking": { "retrieved": "2026-10-29", "confidence": "verified" }
+  }
+}

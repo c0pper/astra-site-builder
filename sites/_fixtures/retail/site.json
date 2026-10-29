@@ -1,0 +1,23 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "auto-repair",
+  "business": {
+    "name": "Ricambi Esempio",
+    "address": { "street": "Via degli Esempi, 7", "postalCode": "84100", "city": "Salerno", "province": "SA" },
+    "whatsapp": "333 000 0000"
+  },
+  "sections": ["hero", "retail-categories", "retail-brands", "hours", "contact", "map"],
+  "retail": {
+    "categories": ["Filtri e lubrificanti", "Batterie", "Freni", "Accessori"],
+    "brands": ["Bosch", "Brembo", "Castrol"]
+  },
+  "sources": {
+    "business.name": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.address": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.whatsapp": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "medium" },
+    "retail.categories": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "medium" },
+    "retail.brands": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "low" }
+  }
+}

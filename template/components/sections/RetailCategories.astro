@@ -1,0 +1,22 @@
+---
+// Retail section set: available to any category, enabled by listing it in `sections`.
+import Section from '../Section.astro';
+import { telHref, whatsappHref } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const categories = site.retail?.categories ?? [];
+const { phone, whatsapp } = site.business;
+const ask = whatsapp
+  ? { href: whatsappHref(whatsapp, 'Buongiorno, vorrei sapere se avete disponibile: '), label: 'Chiedi disponibilità su WhatsApp' }
+  : phone
+    ? { href: telHref(phone), label: 'Chiedi disponibilità' }
+    : undefined;
+---
+
+<Section id="prodotti" title="I nostri prodotti">
+  <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    {categories.map((c) => <li class="rounded-xl border border-text/10 bg-surface px-5 py-4 text-lg font-semibold">{c}</li>)}
+  </ul>
+  {ask && <a href={ask.href} class="btn mt-8 bg-primary text-on-primary hover:opacity-90" rel="noopener">{ask.label}</a>}
+</Section>

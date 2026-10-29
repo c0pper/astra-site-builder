@@ -1,0 +1,46 @@
+---
+// No third-party request until the visitor asks for the map (cookieless by design).
+import Section from '../Section.astro';
+import { directionsHref, formatAddress } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const b = site.business;
+const geo = b.geo;
+const d = 0.004;
+const osmSrc = geo
+  ? `https://www.openstreetmap.org/export/embed.html?bbox=${geo.lng - d},${geo.lat - d},${geo.lng + d},${geo.lat + d}&layer=mapnik&marker=${geo.lat},${geo.lng}`
+  : undefined;
+---
+
+<Section id="dove-siamo" title="Dove siamo">
+  <p class="text-lg">{formatAddress(b.address)}</p>
+  <a href={directionsHref(b)} class="btn mt-4 bg-primary text-on-primary hover:opacity-90" rel="noopener">
+    Ottieni indicazioni
+  </a>
+  {
+    osmSrc && (
+      <div class="mt-8 overflow-hidden rounded-2xl border border-text/10" data-map={osmSrc}>
+        <div class="flex aspect-[16/9] flex-col items-center justify-center gap-3 bg-surface-alt p-6 text-center sm:aspect-[21/9]">
+          <button type="button" class="btn border border-ink/30 text-ink hover:bg-surface" data-map-load>
+            Mostra la mappa
+          </button>
+          <p class="max-w-sm text-sm text-muted">La mappa viene caricata da openstreetmap.org.</p>
+        </div>
+      </div>
+    )
+  }
+</Section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-map]').forEach((box) => {
+    box.querySelector('[data-map-load]')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = box.dataset.map!;
+      iframe.title = 'Mappa';
+      iframe.loading = 'lazy';
+      iframe.className = 'block aspect-[16/9] w-full sm:aspect-[21/9]';
+      box.replaceChildren(iframe);
+    });
+  });
+</script>

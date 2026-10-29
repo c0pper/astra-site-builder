@@ -1,0 +1,52 @@
+---
+// Template privacy notice (GDPR art. 13). Needs legal review before the first live site (see docs/PLAN.md).
+import Base from '../layouts/Base.astro';
+import { formatAddress } from '../lib/format';
+import { loadSite } from '../lib/site';
+
+const { site } = loadSite();
+const b = site.business;
+const controller = b.legalName ?? b.name;
+const isSpec = site.status === 'spec';
+---
+
+<Base title={`Informativa privacy – ${b.name}`}>
+  <article class="container-page max-w-3xl space-y-5 py-14 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold">
+    <h1 class="text-4xl font-bold">Informativa privacy</h1>
+    {
+      isSpec && (
+        <p class="rounded-lg bg-accent/15 px-4 py-3">
+          Questo sito è un'anteprima dimostrativa: non raccoglie dati personali e il modulo di contatto è disattivato.
+        </p>
+      )
+    }
+
+    <h2>Titolare del trattamento</h2>
+    <p>
+      {controller}, {formatAddress(b.address)}{b.vatNumber && `, P.IVA ${b.vatNumber}`}.
+      {b.email && <>Contatto: <a href={`mailto:${b.email}`} class="underline">{b.email}</a>.</>}
+    </p>
+
+    <h2>Dati trattati e finalità</h2>
+    <p>
+      Se compili il modulo di contatto trattiamo nome, recapito e messaggio al solo scopo di rispondere alla tua richiesta
+      (art. 6.1.b GDPR). I dati non sono ceduti a terzi né usati per finalità di marketing.
+    </p>
+
+    <h2>Conservazione</h2>
+    <p>I dati sono conservati per il tempo necessario a gestire la richiesta e poi cancellati.</p>
+
+    <h2>Cookie e servizi esterni</h2>
+    <p>
+      Questo sito non utilizza cookie né strumenti di profilazione. La mappa viene caricata da OpenStreetMap solo se
+      premi "Mostra la mappa". I link a Google Maps, WhatsApp e social network portano a servizi esterni con proprie
+      informative.
+    </p>
+
+    <h2>I tuoi diritti</h2>
+    <p>
+      Puoi chiedere accesso, rettifica, cancellazione, limitazione o opposizione al trattamento dei tuoi dati (artt.
+      15–22 GDPR) scrivendo al titolare, e proporre reclamo al Garante per la protezione dei dati personali.
+    </p>
+  </article>
+</Base>

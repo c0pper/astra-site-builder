@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+import DemoBanner from '../components/DemoBanner.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import MobileBar from '../components/MobileBar.astro';
+import { loadSite } from '../lib/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** JSON-LD object for this page, if any. */
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, jsonLd } = Astro.props;
+const { site, theme } = loadSite();
+const isSpec = site.status === 'spec';
+const initial = site.business.name.trim().charAt(0).toUpperCase();
+const favicon = `data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="${theme.palette.primary}"/><text x="32" y="44" font-family="sans-serif" font-size="36" font-weight="700" text-anchor="middle" fill="${theme.palette.surface}">${initial}</text></svg>`,
+)}`;
+---
+
+<html lang="it" style={theme.cssVars}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {isSpec && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content={theme.palette.primary} />
+    <link rel="icon" href={favicon} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body class="pb-16 md:pb-0">
+    {isSpec && <DemoBanner />}
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <MobileBar />
+  </body>
+</html>

@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+/* Every font any preset can use. Browsers download only the faces a page actually uses. */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/oswald';
+@import '@fontsource-variable/archivo';
+@import '@fontsource-variable/montserrat';
+
+/* Values come from the per-site CSS variables set on <html> (lib/theme.ts). */
+@theme inline {
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-ink: var(--ink);
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-body);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-text font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading text-balance;
+  }
+  /* Alternate section bands by position; the hero (first) sets its own background via utilities. */
+  main > section:nth-of-type(even) {
+    @apply bg-surface-alt;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2;
+}

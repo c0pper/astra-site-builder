@@ -1,0 +1,28 @@
+---
+import { directionsHref, telHref, whatsappHref } from '../lib/format';
+import { loadSite } from '../lib/site';
+
+interface Props {
+  /** `onDark` for use over images or the primary colour. */
+  tone?: 'default' | 'onDark';
+}
+const { tone = 'default' } = Astro.props;
+const { site } = loadSite();
+const b = site.business;
+const secondary =
+  tone === 'onDark'
+    ? 'border border-current text-current hover:bg-white/10'
+    : 'border border-ink/30 text-ink hover:bg-surface-alt';
+---
+
+<div class="flex flex-wrap gap-3">
+  {b.phone && <a href={telHref(b.phone)} class="btn bg-accent text-on-accent hover:opacity-90">Chiama ora</a>}
+  {
+    b.whatsapp && (
+      <a href={whatsappHref(b.whatsapp)} class:list={['btn', secondary]} rel="noopener">
+        Scrivici su WhatsApp
+      </a>
+    )
+  }
+  <a href={directionsHref(b)} class:list={['btn', secondary]} rel="noopener">Indicazioni</a>
+</div>

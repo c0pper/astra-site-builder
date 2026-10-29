@@ -1,0 +1,22 @@
+---
+import Section from '../Section.astro';
+import { telHref } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const booking = site.automotive!.booking!;
+const phone = booking.phone ?? site.business.phone;
+---
+
+<Section id="prenota">
+  <div class="flex flex-col items-start gap-6 rounded-2xl bg-primary p-8 text-on-primary sm:flex-row sm:items-center sm:justify-between sm:p-10">
+    <div>
+      <h2 class="text-3xl font-bold">Prenota un appuntamento</h2>
+      <p class="mt-2 opacity-90">Scegli il momento che preferisci, senza attese in officina.</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {booking.url && <a href={booking.url} class="btn bg-accent text-on-accent hover:opacity-90" rel="noopener">Prenota online</a>}
+      {phone && <a href={telHref(phone)} class="btn border border-current hover:bg-white/10">Prenota per telefono</a>}
+    </div>
+  </div>
+</Section>

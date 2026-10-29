@@ -1,0 +1,22 @@
+---
+import { formatAddress, href } from '../lib/format';
+import { loadSite } from '../lib/site';
+
+const { site } = loadSite();
+const b = site.business;
+---
+
+<footer class="bg-text text-surface/80">
+  <div class="container-page grid gap-6 py-10 text-sm sm:grid-cols-2">
+    <div class="space-y-1">
+      <p class="font-heading text-lg font-bold text-surface">{b.name}</p>
+      {b.legalName && <p>{b.legalName}</p>}
+      <p>{formatAddress(b.address)}</p>
+      {b.vatNumber && <p>P.IVA {b.vatNumber}</p>}
+    </div>
+    <nav aria-label="Informazioni legali" class="flex gap-6 sm:justify-end">
+      <a href={href('privacy/')} class="underline-offset-4 hover:underline">Privacy</a>
+      <a href={href('crediti/')} class="underline-offset-4 hover:underline">Crediti</a>
+    </nav>
+  </div>
+</footer>

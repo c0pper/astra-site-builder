@@ -1,0 +1,34 @@
+---
+// Sticky bottom bar on small screens: the three actions a local customer actually takes.
+import { directionsHref, telHref, whatsappHref } from '../lib/format';
+import { loadSite } from '../lib/site';
+
+const { site } = loadSite();
+const b = site.business;
+const actions = [
+  b.phone && { label: 'Chiama', href: telHref(b.phone) },
+  b.whatsapp && { label: 'WhatsApp', href: whatsappHref(b.whatsapp) },
+  { label: 'Indicazioni', href: directionsHref(b) },
+].filter((a): a is { label: string; href: string } => Boolean(a));
+---
+
+<nav
+  aria-label="Azioni rapide"
+  class="fixed inset-x-0 bottom-0 z-40 grid border-t border-text/10 bg-surface md:hidden"
+  style={`grid-template-columns: repeat(${actions.length}, minmax(0, 1fr))`}
+>
+  {
+    actions.map((a, i) => (
+      <a
+        href={a.href}
+        class:list={[
+          'flex min-h-14 items-center justify-center text-sm font-semibold',
+          i === 0 ? 'bg-primary text-on-primary' : 'text-ink',
+        ]}
+        rel={a.href.startsWith('http') ? 'noopener' : undefined}
+      >
+        {a.label}
+      </a>
+    ))
+  }
+</nav>

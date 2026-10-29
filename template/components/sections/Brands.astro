@@ -1,0 +1,13 @@
+---
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const brands = site.automotive?.brands ?? [];
+---
+
+<Section id="marchi" title="Marchi trattati">
+  <ul class="flex flex-wrap gap-3">
+    {brands.map((brand) => <li class="rounded-full border border-text/15 bg-surface px-5 py-2 font-semibold">{brand}</li>)}
+  </ul>
+</Section>

@@ -1,0 +1,157 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "auto-repair",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Soccorso stradale Boscia",
+    "legalName": "F.lli Boscia S.r.l.",
+    "vatNumber": "01253210627",
+    "address": {
+      "street": "Via Torre della Catena, 153",
+      "postalCode": "82100",
+      "city": "Benevento",
+      "province": "BN"
+    },
+    "phone": "0824 23606",
+    "hours": {
+      "mon": [
+        {
+          "open": "08:00",
+          "close": "19:00"
+        }
+      ],
+      "tue": [
+        {
+          "open": "08:00",
+          "close": "19:00"
+        }
+      ],
+      "wed": [
+        {
+          "open": "08:00",
+          "close": "19:00"
+        }
+      ],
+      "thu": [
+        {
+          "open": "08:00",
+          "close": "19:00"
+        }
+      ],
+      "fri": [
+        {
+          "open": "08:00",
+          "close": "19:00"
+        }
+      ],
+      "sat": [
+        {
+          "open": "08:30",
+          "close": "13:00"
+        }
+      ],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+",
+    "rating": {
+      "value": 5,
+      "count": 131,
+      "url": "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+"
+    }
+  },
+  "copy": {
+    "headline": "Soccorso stradale a Benevento",
+    "tagline": "Soccorso stradale a Benevento. Chiamaci allo 0824 23606.",
+    "about": "Siamo F.lli Boscia S.r.l., in Via Torre della Catena a Benevento. Ci occupiamo di soccorso stradale.\n\nPer un intervento chiamaci allo 0824 23606."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Soccorso stradale"
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+",
+        "https://trova-aperto.it/benevento/soccorso-stradale-boscia-1444834"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Maps listing name (lead row), BOSCIA in normal capitalisation. trova-aperto.it uses the same name but was read only via search summaries (page 403). Directories use the legal name F.lli Boscia S.r.l."
+    },
+    "business.legalName": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/01253210627",
+        "https://www.paginegialle.it/benevento-bn/autofficina/autocarrozzeria-boscia-fratelli_4"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "VIES returns F.LLI BOSCIA SRL; PagineGialle lists F.lli Boscia - S.r.l. with the same phone"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/01253210627",
+        "https://www.paginegialle.it/benevento-bn/autofficina/autocarrozzeria-boscia-fratelli_4"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Found in PagineGialle page data; VIES confirms it valid for F.LLI BOSCIA SRL, Via Torre della Catena 153, 82100 Benevento"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/01253210627"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Conflict: lead row and VIES say Via Torre della Catena 153; PagineGialle (https://www.paginegialle.it/benevento-bn/autofficina/autocarrozzeria-boscia-fratelli_4) says 155 and lists a second site in Zona industriale Pezza Piana (https://www.paginegialle.it/benevento-bn/autosoccorso/f-lli-boscia-s-r-l). Confirm number and which site serves customers."
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+",
+        "https://www.paginegialle.it/benevento-bn/autofficina/autocarrozzeria-boscia-fratelli_4",
+        "https://www.paginebianche.it/cerca-da-numero?qs=082423606"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Lead row, PagineGialle (marked verified) and PagineBianche reverse lookup agree"
+    },
+    "business.hours": {
+      "urls": [
+        "https://trova-aperto.it/benevento/soccorso-stradale-boscia-1444834"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "low",
+      "note": "Page returns 403 to fetch; hours read from two search-engine summaries of it (listing updated 2025-10-31). Confirm with the business"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Maps link from the lead row"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "5.0 from 131 reviews, from the lead row"
+    },
+    "automotive.services": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+",
+        "https://www.paginegialle.it/benevento-bn/autosoccorso/f-lli-boscia-s-r-l"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Maps listing name \"Soccorso stradale BOSCIA\" and PagineGialle category Autosoccorso. No other service is named by any source."
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [
+    "auto-repair"
+  ],
+  "business": {
+    "name": "Salemme Pneumatici",
+    "vatNumber": "02850240611",
+    "address": {
+      "street": "Via Pier Paolo Pasolini, 17",
+      "postalCode": "81100",
+      "city": "Caserta",
+      "province": "CE"
+    },
+    "geo": {
+      "lat": 41.0600888,
+      "lng": 14.3397017
+    },
+    "phone": "0823 327584",
+    "email": "salemme_gomme@libero.it",
+    "hours": {
+      "mon": [
+        {
+          "open": "08:00",
+          "close": "19:30"
+        }
+      ],
+      "tue": [
+        {
+          "open": "08:00",
+          "close": "19:30"
+        }
+      ],
+      "wed": [
+        {
+          "open": "08:00",
+          "close": "19:30"
+        }
+      ],
+      "thu": [
+        {
+          "open": "08:00",
+          "close": "19:30"
+        }
+      ],
+      "fri": [
+        {
+          "open": "08:00",
+          "close": "19:30"
+        }
+      ],
+      "sat": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        }
+      ],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17",
+    "rating": {
+      "value": 4.8,
+      "count": 279,
+      "url": "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17"
+    }
+  },
+  "theme": {
+    "palette": "rosso-corsa"
+  },
+  "copy": {
+    "headline": "Il tuo gommista a Caserta",
+    "tagline": "Vendita e cambio gomme, equilibratura, convergenza, assetto e pastiglie freni.",
+    "about": "Salemme Pneumatici è in Via Pier Paolo Pasolini 17, a Caserta. Ci occupiamo di vendita e assistenza pneumatici per auto, moto, autocarri, fuoristrada, veicoli industriali e agricoli.\n\nIn officina facciamo cambio gomme estive e invernali, riparazione forature, equilibratura, convergenza e assetto. Ci occupiamo anche di diagnosi computerizzata, ammortizzatori e pastiglie freni.\n\nChiamaci allo 0823 327584 o passa in officina."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "description": "Pneumatici per auto, moto, autocarri, fuoristrada, veicoli industriali e agricoli."
+      },
+      {
+        "name": "Cambio gomme",
+        "description": "Gomme estive e invernali, per tutti i tipi di veicoli."
+      },
+      {
+        "name": "Riparazione forature",
+        "description": "Riparazione del foro su gomme di auto e moto."
+      },
+      {
+        "name": "Equilibratura"
+      },
+      {
+        "name": "Convergenza e assetto"
+      },
+      {
+        "name": "Diagnosi computerizzata"
+      },
+      {
+        "name": "Ammortizzatori"
+      },
+      {
+        "name": "Pastiglie freni"
+      }
+    ],
+    "brands": [
+      "Michelin",
+      "Continental",
+      "Goodyear",
+      "Pirelli"
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.salemmepneumatici.com/",
+        "https://www.paginegialle.it/gomme_pneumatici_caserta"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Trading name on own site and PagineGialle; Google listing name is 'Salemme Pneumatici Di Salemme Vincenzo'"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://www.salemmepneumatici.com/",
+        "https://www.paginegialle.it/gomme_pneumatici_caserta"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "'P.I. 02850240611' in the own-site footer (an Italiaonline template site) and on PagineGialle (same Italiaonline database). Checksum valid, but VIES returns isValid=false (not enrolled for intra-EU VAT, or ceased): https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/02850240611. Confirm with the owner before showing it"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.salemmepneumatici.com/dove-siamo",
+        "https://www.paginegialle.it/gomme_pneumatici_caserta",
+        "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17",
+        "https://nominatim.openstreetmap.org/search?format=json&q=Via%20Pier%20Paolo%20Pasolini%2017%2C%2081100%20Caserta"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Own site and PagineGialle write 'Via Pasolini 17'; the full street name 'Via Pier Paolo Pasolini' is in the lead row and OpenStreetMap (Nominatim). One directory files the street under San Nicola la Strada; own site and OSM say Caserta 81100"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=json&q=Via%20Pier%20Paolo%20Pasolini%2017%2C%2081100%20Caserta"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "OSM node 3528133036 named 'Salemme Pneumatici' at this address"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.salemmepneumatici.com/",
+        "https://www.paginegialle.it/gomme_pneumatici_caserta",
+        "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high"
+    },
+    "business.email": {
+      "urls": [
+        "https://www.salemmepneumatici.com/"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high"
+    },
+    "business.hours": {
+      "urls": [
+        "https://www.salemmepneumatici.com/dove-siamo",
+        "https://www.paginegialle.it/gomme_pneumatici_caserta"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Weakest part: Sunday closed is stated only by PagineGialle; own site lists Mon-Sat only. Mon-Fri 08:00-19:30 and Sat 08:00-13:00 agree on both sources"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Search link from leads/campania_leads.csv, not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Salemme+Pneumatici+Di+Salemme+Vincenzo+Via+Pier+Paolo+Pasolini%2C+17"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "4.8 from 279 reviews, from the lead row (leads/campania_leads.csv)"
+    },
+    "automotive.services": {
+      "urls": [
+        "https://www.salemmepneumatici.com/",
+        "https://www.salemmepneumatici.com/chi-siamo",
+        "https://www.salemmepneumatici.com/cosa-facciamo"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "All named on the own site: home (cambio gomme da neve ed estive, vendita pneumatici, equilibratura), /chi-siamo (vendita e assistenza pneumatici per auto, autocarri, moto, fuoristrada, veicoli industriali e agricoli), /cosa-facciamo (sostituzione e riparazione gomme, diagnosi computerizzata, convergenza, equilibratura, riparazione foro gomma auto e moto, ammortizzatori, assetto, pastiglie freni). 'Convergenza e assetto' merges the separate items 'convergenza' and 'assetto' (8-service cap)"
+    },
+    "automotive.brands": {
+      "urls": [
+        "https://www.salemmepneumatici.com/cosa-facciamo"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Brand strip on own site's services page. Not a dealer claim; PagineGialle's ~90-name brand keyword list ignored"
+    }
+  }
+}

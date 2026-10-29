@@ -1,0 +1,29 @@
+---
+// Rating summary only. Review texts are never copied (Google ToS); visitors follow the link to read them.
+import Section from '../Section.astro';
+import { formatRating } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const rating = site.business.rating!;
+const onGoogle = /google\./.test(new URL(rating.url).hostname);
+const percent = (rating.value / 5) * 100;
+---
+
+<Section id="recensioni" title="Cosa dicono di noi">
+  <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
+    <p class="font-heading text-6xl font-bold text-ink">{formatRating(rating.value)}</p>
+    <div>
+      <div class="relative inline-block text-2xl leading-none" aria-hidden="true">
+        <span class="text-text/20">★★★★★</span>
+        <span class="absolute inset-0 overflow-hidden text-accent" style={`width:${percent}%`}>★★★★★</span>
+      </div>
+      <p class="mt-2 text-muted">
+        {formatRating(rating.value)} su 5 · {rating.count} recensioni{onGoogle && ' su Google'}
+      </p>
+      <a href={rating.url} class="mt-3 inline-block font-semibold text-ink underline underline-offset-4" rel="noopener">
+        Leggi le recensioni
+      </a>
+    </div>
+  </div>
+</Section>

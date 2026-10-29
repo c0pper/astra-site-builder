@@ -1,0 +1,61 @@
+---
+import Section from '../Section.astro';
+import { DAYS, formatDate, telHref } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const { hours, seasonalClosures = [], phone } = site.business;
+const known = hours ? DAYS.filter(([key]) => hours[key] !== undefined) : [];
+---
+
+<Section id="orari" title="Orari">
+  {
+    known.length ? (
+      <table class="w-full max-w-lg text-lg">
+        <caption class="sr-only">Orari di apertura</caption>
+        <tbody>
+          {known.map(([key, day]) => {
+            const intervals = hours![key]!;
+            return (
+              <tr class="border-b border-text/10">
+                <th scope="row" class="py-3 pr-6 text-left font-medium">{day}</th>
+                <td class="py-3 text-right tabular-nums">
+                  {intervals.length ? intervals.map((i) => `${i.open}–${i.close}`).join(' · ') : <span class="text-muted">Chiuso</span>}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    ) : (
+      <p class="text-lg">
+        Per conoscere gli orari di apertura{' '}
+        {phone ? (
+          <a href={telHref(phone)} class="font-semibold text-ink underline underline-offset-4">chiamaci</a>
+        ) : (
+          'contattaci'
+        )}.
+      </p>
+    )
+  }
+  {
+    seasonalClosures.length > 0 && (
+      <ul class="mt-6 space-y-2">
+        {seasonalClosures.map((c) => (
+          <li data-until={c.to} class="rounded-lg bg-accent/15 px-4 py-3">
+            <strong>Chiusura</strong> dal {formatDate(c.from)} al {formatDate(c.to)}
+            {c.note && <span> — {c.note}</span>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Section>
+
+<script>
+  // Hide closures that have already ended (the page is static, so this runs in the browser).
+  const today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll<HTMLElement>('[data-until]').forEach((el) => {
+    if ((el.dataset.until ?? '') < today) el.hidden = true;
+  });
+</script>

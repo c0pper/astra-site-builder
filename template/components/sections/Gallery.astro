@@ -1,0 +1,38 @@
+---
+// Client photos, or on spec sites a stock gallery that is visibly labelled as illustrative:
+// unlabelled stock would imply "this is our place/our work".
+import { Picture } from 'astro:assets';
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { images, theme } = loadSite();
+const { gallery, galleryIllustrative } = images;
+const strip = theme.variants.gallery === 'strip';
+---
+
+<Section
+  id="galleria"
+  title={galleryIllustrative ? 'Il nostro mestiere' : 'Galleria'}
+  intro={galleryIllustrative ? 'Immagini illustrative.' : undefined}
+>
+  <ul
+    class:list={[
+      strip ? 'flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 gap-3 md:grid-cols-3',
+    ]}
+  >
+    {
+      gallery.map((img) => (
+        <li class:list={[strip && 'w-72 shrink-0 snap-start sm:w-96']}>
+          <Picture
+            src={img.src}
+            alt={img.alt}
+            formats={['avif', 'webp']}
+            widths={[400, 800]}
+            sizes={strip ? '384px' : '(min-width: 768px) 33vw, 50vw'}
+            class="aspect-square w-full rounded-xl object-cover"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</Section>

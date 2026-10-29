@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+
+# Prospect data: business contact lists, kept out of git
+leads/
+Claude outputs/

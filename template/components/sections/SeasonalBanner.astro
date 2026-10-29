@@ -1,0 +1,32 @@
+---
+// Tyre-change reminder. Rendered hidden and revealed in the browser only during the change-over windows,
+// so a static build never shows an out-of-season message. No legal claims about deadlines.
+import { telHref, whatsappHref } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const { phone, whatsapp } = site.business;
+const cta = phone ? { href: telHref(phone), label: 'Chiama per prenotare' } : { href: whatsappHref(whatsapp!), label: 'Prenota su WhatsApp' };
+---
+
+<aside class="bg-accent text-on-accent" data-season-banner hidden>
+  <div class="container-page flex flex-col items-start gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+    <p class="font-heading text-xl font-bold">
+      <span data-season="winter" hidden>È il momento delle gomme invernali.</span>
+      <span data-season="summer" hidden>È il momento delle gomme estive.</span>
+      <span class="block font-sans text-base font-normal opacity-90">Prenota il cambio gomme ed evita le attese.</span>
+    </p>
+    <a href={cta.href} class="btn shrink-0 bg-text text-surface hover:opacity-90" rel="noopener">{cta.label}</a>
+  </div>
+</aside>
+
+<script>
+  // Month-day windows: winter change-over Oct 1 – Dec 15, summer change-over Mar 15 – May 15.
+  const md = new Date().toISOString().slice(5, 10);
+  const season = md >= '10-01' && md <= '12-15' ? 'winter' : md >= '03-15' && md <= '05-15' ? 'summer' : null;
+  const banner = document.querySelector<HTMLElement>('[data-season-banner]');
+  if (banner && season) {
+    banner.querySelector<HTMLElement>(`[data-season="${season}"]`)!.hidden = false;
+    banner.hidden = false;
+  }
+</script>

@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import About from '../components/sections/About.astro';
+import Booking from '../components/sections/Booking.astro';
+import Brands from '../components/sections/Brands.astro';
+import Contact from '../components/sections/Contact.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import Hero from '../components/sections/Hero.astro';
+import Hours from '../components/sections/Hours.astro';
+import Map from '../components/sections/Map.astro';
+import RetailBrands from '../components/sections/RetailBrands.astro';
+import RetailCategories from '../components/sections/RetailCategories.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import SeasonalBanner from '../components/sections/SeasonalBanner.astro';
+import Services from '../components/sections/Services.astro';
+import type { SectionId } from '../registry';
+import { localBusinessJsonLd } from '../lib/jsonld';
+import { loadSite } from '../lib/site';
+
+// Sections without a component yet (other categories) are filtered out by loadSite().
+const COMPONENTS: Partial<Record<SectionId, (props: Record<string, never>) => unknown>> = {
+  hero: Hero,
+  about: About,
+  services: Services,
+  hours: Hours,
+  reviews: Reviews,
+  gallery: Gallery,
+  contact: Contact,
+  map: Map,
+  brands: Brands,
+  'seasonal-banner': SeasonalBanner,
+  booking: Booking,
+  'retail-categories': RetailCategories,
+  'retail-brands': RetailBrands,
+};
+
+const { site, sections, label } = loadSite();
+const b = site.business;
+const title = site.seo.title ?? `${b.name} – ${label} a ${b.address.city}`;
+const description = site.seo.description ?? site.copy.tagline;
+---
+
+<Base title={title} description={description} jsonLd={localBusinessJsonLd(site)}>
+  {
+    sections.map((id) => {
+      const Component = COMPONENTS[id];
+      return Component && <Component />;
+    })
+  }
+</Base>

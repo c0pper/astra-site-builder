@@ -1,0 +1,155 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": ["auto-repair"],
+  "business": {
+    "name": "Gianfico Service",
+    "legalName": "GIANFICO SERVICE S.R.L.",
+    "vatNumber": "08766571213",
+    "address": {
+      "street": "Via Montenuovo Licola Patria, 97",
+      "postalCode": "80078",
+      "city": "Pozzuoli",
+      "province": "NA"
+    },
+    "phone": "081 866 2070",
+    "hours": {
+      "mon": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
+      "tue": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
+      "wed": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
+      "thu": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
+      "fri": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
+      "sat": [{ "open": "08:30", "close": "13:00" }],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+",
+    "rating": {
+      "value": 4.7,
+      "count": 231,
+      "url": "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+"
+    }
+  },
+  "copy": {
+    "headline": "Gommista e officina a Pozzuoli",
+    "tagline": "Riparazione pneumatici, tagliando, freni e soccorso stradale 24 ore su 24 per l'auto.",
+    "about": "Gianfico Service è gommista e officina in Via Montenuovo Licola Patria 97, a Pozzuoli. Ci occupiamo di riparazione pneumatici, deposito gomme e gonfiaggio con azoto.\n\nIn officina facciamo tagliando, freni, ammortizzatori e ricarica del climatizzatore. Offriamo anche il soccorso stradale 24 ore su 24 per l'auto."
+  },
+  "automotive": {
+    "services": [
+      { "name": "Riparazione pneumatici e gonfiaggio con azoto" },
+      { "name": "Deposito pneumatici" },
+      { "name": "Servizio di montaggio mobile" },
+      { "name": "Soccorso stradale 24 ore su 24 per l'auto" },
+      { "name": "Tagliando e cambio olio" },
+      { "name": "Freni, ammortizzatori e assetti sportivi" },
+      { "name": "Climatizzatore e sanificazione abitacolo" },
+      { "name": "Batterie" }
+    ],
+    "brands": ["Pirelli", "Metzeler"]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.pirelli.com/tyres/it-it/auto/gommisti-e-rivenditori/italia/puzzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682",
+        "https://atoka.io/public/it/azienda/gianfico-service-srl/08d30d5cd522",
+        "https://altraopinione.org/negozio/pozzuoli/gianfico-service-s-r-l/"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Pirelli/Metzeler (one dealer database), atoka registry and altraopinione all name it Gianfico Service (S.R.L.); legal suffix dropped."
+    },
+    "business.legalName": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08766571213",
+        "https://atoka.io/public/it/azienda/gianfico-service-srl/08d30d5cd522",
+        "https://www.reportaziende.it/gianfico_service_srl_na"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08766571213",
+        "https://atoka.io/public/it/azienda/gianfico-service-srl/08d30d5cd522",
+        "https://www.reportaziende.it/gianfico_service_srl_na"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "VIES: valid, GIANFICO SERVICE S.R.L., Via Montenuovo Licola Patria n 97, 80078 Pozzuoli NA."
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+",
+        "https://www.pirelli.com/tyres/it-it/auto/gommisti-e-rivenditori/italia/puzzuoli/it0008076682",
+        "https://www.pirelli.com/tyres/it-it/moto/gommisti-e-rivenditori/italia/pozzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682",
+        "https://altraopinione.org/negozio/pozzuoli/gianfico-service-s-r-l/",
+        "https://atoka.io/public/it/azienda/gianfico-service-srl/08d30d5cd522",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08766571213"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high",
+      "note": "Pirelli auto page spells the town 'Puzzuoli' (typo)."
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+",
+        "https://www.pirelli.com/tyres/it-it/moto/gommisti-e-rivenditori/italia/pozzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682",
+        "https://altraopinione.org/negozio/pozzuoli/gianfico-service-s-r-l/"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "high"
+    },
+    "business.hours": {
+      "urls": [
+        "https://www.pirelli.com/tyres/it-it/auto/gommisti-e-rivenditori/italia/puzzuoli/it0008076682",
+        "https://www.pirelli.com/tyres/it-it/moto/gommisti-e-rivenditori/italia/pozzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682",
+        "https://altraopinione.org/negozio/pozzuoli/gianfico-service-s-r-l/"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Mon-Fri and Sunday closed agree on all four pages. Saturday closes 13:30 on Pirelli auto, Pirelli moto and Metzeler (one dealer database) vs 13:00 on altraopinione (Google-derived): 3-to-1 by page, 1-to-1 by independent source. The more conservative 13:00 is used; confirm with the client."
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "From the lead row (leads/campania_leads.csv)."
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "4.7 from 231 reviews, per the lead row. altraopinione.org shows an older count of 212 and no star value."
+    },
+    "automotive.services": {
+      "urls": [
+        "https://www.pirelli.com/tyres/it-it/auto/gommisti-e-rivenditori/italia/puzzuoli/it0008076682",
+        "https://www.pirelli.com/tyres/it-it/moto/gommisti-e-rivenditori/italia/pozzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "One dealer database (Pirelli/Metzeler). Original names: 'Riparazione di pneumatici' + 'Gonfiaggio azoto'; 'Hotel dei pneumatici'; 'Servizio di montaggio mobile'; 'Servizio di soccorso stradale 24 ore su 24 per l'auto' (Pirelli auto: 'Servizio Soccorso Auto 24h'); 'Tagliando Auto+' + 'Filtri dell'olio' + 'Olio'; 'Servizio freni' + 'Ammortizzatori' + 'Assetti sportivi' / 'Messa a punto sportiva'; 'Carica condizionatori' + 'Sanificazione' / 'Igienizzazione abitacolo'; 'Batteria'. Not used: 'Meccanico', 'Cerchioni', 'Free Basic Car Inspect', 'Driver OnTheGo'."
+    },
+    "automotive.brands": {
+      "urls": [
+        "https://www.pirelli.com/tyres/it-it/auto/gommisti-e-rivenditori/italia/puzzuoli/it0008076682",
+        "https://www.pirelli.com/tyres/it-it/moto/gommisti-e-rivenditori/italia/pozzuoli/it0008076682",
+        "https://www.metzeler.com/it-it/gommisti-e-rivenditori/italy/pozzuoli/it0008076682"
+      ],
+      "retrieved": "2026-10-29",
+      "confidence": "medium",
+      "note": "Listed in the brands' own dealer locators (Metzeler is a Pirelli brand, one database)."
+    }
+  }
+}

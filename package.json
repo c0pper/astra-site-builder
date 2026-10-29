@@ -1,0 +1,43 @@
+{
+  "name": "astro-site-builder",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/site.mjs dev",
+    "build:site": "node scripts/site.mjs build",
+    "preview:site": "node scripts/site.mjs preview",
+    "check": "node scripts/site.mjs check",
+    "validate": "node scripts/site.mjs validate",
+    "check:registry": "node scripts/check-registry.mjs",
+    "screenshot": "node scripts/screenshot.mjs",
+    "optimize:pack": "node scripts/optimize-pack.mjs",
+    "test": "node --test \"template/**/*.test.ts\"",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "visual": "node scripts/visual.mjs",
+    "gate": "node scripts/gate.mjs",
+    "deploy:preview": "node scripts/deploy-preview.mjs",
+    "scaffold": "node scripts/scaffold-site.mjs",
+    "review": "node scripts/review.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/montserrat": "^5.3.0",
+    "@fontsource-variable/oswald": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.4",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^26.6.5",
+    "lighthouse": "^13.6.0",
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.64.1",
+    "pngjs": "^7.0.0",
+    "sharp": "0.35.5",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.154.0"
+  }
+}

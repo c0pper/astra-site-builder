@@ -1,0 +1,14 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "auto-repair",
+  "business": {
+    "name": "Sito di prova",
+    "address": { "street": "Via degli Esempi, 1", "postalCode": "80100", "city": "Napoli", "province": "NA" }
+  },
+  "sources": {
+    "business.name": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.address": { "urls": ["https://example.com/"], "retrieved": "2026-10-29", "confidence": "high" }
+  }
+}

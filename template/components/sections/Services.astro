@@ -1,0 +1,34 @@
+---
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { services, theme } = loadSite();
+const variant = theme.variants.services;
+---
+
+<Section id="servizi" title="Servizi">
+  {
+    variant === 'grid' ? (
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((s) => (
+          <li class="rounded-xl border border-text/10 bg-surface p-6">
+            <h3 class="text-xl font-semibold text-ink">{s.name}</h3>
+            {s.description && <p class="mt-2 text-muted">{s.description}</p>}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <ul class="grid gap-x-10 gap-y-4 sm:grid-cols-2">
+        {services.map((s) => (
+          <li class="flex gap-3 border-b border-text/10 pb-4">
+            <span aria-hidden="true" class="mt-1 font-bold text-ink">✓</span>
+            <div>
+              <h3 class="text-lg font-semibold">{s.name}</h3>
+              {s.description && <p class="mt-1 text-muted">{s.description}</p>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Section>

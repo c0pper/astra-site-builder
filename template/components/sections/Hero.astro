@@ -1,0 +1,97 @@
+---
+import { Picture } from 'astro:assets';
+import ContactButtons from '../ContactButtons.astro';
+import { formatRating } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site, theme, images, label } = loadSite();
+const b = site.business;
+const image = images.hero;
+// Image variants fall back to `centered` when the pack has no hero photo.
+const variant = image ? theme.variants.hero : 'centered';
+const heading = site.copy.headline ?? b.name;
+const eyebrow = `${label} a ${b.address.city}`;
+---
+
+{
+  variant === 'centered' && (
+    <section class="bg-primary text-on-primary">
+      <div class="container-page py-20 text-center sm:py-28">
+        <p class="text-sm font-semibold tracking-widest uppercase opacity-80">{eyebrow}</p>
+        <h1 class="mx-auto mt-4 max-w-3xl text-4xl font-bold sm:text-6xl">{heading}</h1>
+        {site.copy.tagline && <p class="mx-auto mt-5 max-w-2xl text-lg opacity-90">{site.copy.tagline}</p>}
+        {b.rating && (
+          <p class="mt-5 text-sm opacity-90">
+            ★ {formatRating(b.rating.value)} · {b.rating.count} recensioni
+          </p>
+        )}
+        <div class="mt-8 flex justify-center">
+          <ContactButtons tone="onDark" />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  variant === 'split' && image && (
+    <section class="bg-surface">
+      <div class="container-page grid items-center gap-10 py-14 md:grid-cols-2 md:py-20">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-ink uppercase">{eyebrow}</p>
+          <h1 class="mt-3 text-4xl font-bold sm:text-5xl">{heading}</h1>
+          {site.copy.tagline && <p class="mt-5 text-lg text-muted">{site.copy.tagline}</p>}
+          {b.rating && (
+            <p class="mt-4 text-sm text-muted">
+              ★ {formatRating(b.rating.value)} · {b.rating.count} recensioni
+            </p>
+          )}
+          <div class="mt-8">
+            <ContactButtons />
+          </div>
+        </div>
+        <Picture
+          src={image.src}
+          alt={image.alt}
+          formats={['avif', 'webp']}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          loading="eager"
+          fetchpriority="high"
+          class="aspect-[4/3] w-full rounded-2xl object-cover"
+        />
+      </div>
+    </section>
+  )
+}
+
+{
+  variant === 'overlay' && image && (
+    <section class="relative isolate overflow-hidden text-white">
+      <Picture
+        src={image.src}
+        alt={image.alt}
+        formats={['avif', 'webp']}
+        widths={[640, 1024, 1600, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 -z-20 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 -z-10 bg-black/65" />
+      <div class="container-page py-24 sm:py-32">
+        <p class="text-sm font-semibold tracking-widest uppercase opacity-90">{eyebrow}</p>
+        <h1 class="mt-3 max-w-3xl text-4xl font-bold sm:text-6xl">{heading}</h1>
+        {site.copy.tagline && <p class="mt-5 max-w-2xl text-lg opacity-90">{site.copy.tagline}</p>}
+        {b.rating && (
+          <p class="mt-4 text-sm opacity-90">
+            ★ {formatRating(b.rating.value)} · {b.rating.count} recensioni
+          </p>
+        )}
+        <div class="mt-8">
+          <ContactButtons tone="onDark" />
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,46 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-27",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": ["auto-repair"],
+  "business": {
+    "name": "Gomme Esempio",
+    "address": { "street": "Via degli Esempi, 12", "postalCode": "80100", "city": "Napoli", "province": "NA" },
+    "geo": { "lat": 40.8518, "lng": 14.2681 },
+    "phone": "081 000 0000",
+    "hours": {
+      "mon": [{ "open": "08:30", "close": "12:30" }, { "open": "15:00", "close": "19:00" }],
+      "tue": [{ "open": "08:30", "close": "12:30" }, { "open": "15:00", "close": "19:00" }],
+      "wed": [{ "open": "08:30", "close": "12:30" }, { "open": "15:00", "close": "19:00" }],
+      "thu": [{ "open": "08:30", "close": "12:30" }, { "open": "15:00", "close": "19:00" }],
+      "fri": [{ "open": "08:30", "close": "12:30" }, { "open": "15:00", "close": "19:00" }],
+      "sat": [{ "open": "08:30", "close": "12:30" }],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Gomme+Esempio",
+    "rating": { "value": 4.7, "count": 132, "url": "https://www.google.com/maps/search/?api=1&query=Gomme+Esempio" }
+  },
+  "copy": {
+    "headline": "Il tuo gommista di fiducia a Napoli",
+    "about": "Gomme Esempio si occupa di pneumatici e manutenzione dell'auto."
+  },
+  "automotive": {
+    "services": [
+      { "name": "Cambio gomme stagionale", "generic": true },
+      { "name": "Equilibratura", "generic": true },
+      { "name": "Tagliando", "generic": true }
+    ],
+    "brands": ["Michelin", "Pirelli"]
+  },
+  "sources": {
+    "business.name": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.address": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.geo": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.phone": { "urls": ["https://example.com/maps-listing", "https://example.com/facebook"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.hours": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "medium" },
+    "business.googleMapsUrl": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "high" },
+    "business.rating": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-29", "confidence": "high" },
+    "automotive.brands": { "urls": ["https://example.com/facebook"], "retrieved": "2026-10-29", "confidence": "low", "note": "Brands seen in shop-front photos" }
+  }
+}

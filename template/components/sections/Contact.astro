@@ -1,0 +1,85 @@
+---
+// Spec sites: the form is shown but disabled, so no enquiry is ever sent to us instead of the business.
+// Live sites: posts to the Pages Function at /api/contact (PLAN step 9).
+import ContactButtons from '../ContactButtons.astro';
+import Section from '../Section.astro';
+import { formatAddress, href, telHref } from '../../lib/format';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const b = site.business;
+const isSpec = site.status === 'spec';
+// Name only the channels this site actually shows.
+const channels = [b.phone && 'per telefono', b.whatsapp && 'su WhatsApp'].filter(Boolean).join(' o ');
+const field = 'mt-1 w-full rounded-lg border border-text/20 bg-surface px-3 py-2.5 disabled:opacity-60';
+---
+
+<Section id="contatti" title="Contatti">
+  <div class="grid gap-10 md:grid-cols-2">
+    <div class="space-y-6">
+      <dl class="space-y-4 text-lg">
+        {
+          b.phone && (
+            <div>
+              <dt class="text-sm text-muted">Telefono</dt>
+              <dd>
+                <a href={telHref(b.phone)} class="font-semibold text-ink">{b.phone}</a>
+              </dd>
+            </div>
+          )
+        }
+        {
+          b.email && (
+            <div>
+              <dt class="text-sm text-muted">Email</dt>
+              <dd>
+                <a href={`mailto:${b.email}`} class="font-semibold text-ink">{b.email}</a>
+              </dd>
+            </div>
+          )
+        }
+        <div>
+          <dt class="text-sm text-muted">Indirizzo</dt>
+          <dd>{formatAddress(b.address)}</dd>
+        </div>
+      </dl>
+      <ContactButtons />
+    </div>
+
+    <form method="post" action={href('api/contact')} class="space-y-4 rounded-2xl bg-surface p-6 shadow-sm">
+      <fieldset disabled={isSpec} class="space-y-4">
+        <legend class="font-heading text-xl font-bold">Scrivici</legend>
+        {
+          isSpec && (
+            <p class="rounded-lg bg-accent/15 px-4 py-3 text-sm">
+              Il modulo sarà attivo dopo la pubblicazione del sito.{channels && ` Nel frattempo contattaci ${channels}.`}
+            </p>
+          )
+        }
+        <label class="block">
+          <span class="text-sm font-medium">Nome</span>
+          <input name="nome" required autocomplete="name" class={field} />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefono o email</span>
+          <input name="recapito" required autocomplete="email" class={field} />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Messaggio</span>
+          <textarea name="messaggio" required rows="4" class={field}></textarea>
+        </label>
+        <!-- Honeypot: humans never see or fill this field. -->
+        <div class="hidden" aria-hidden="true">
+          <label>Sito web <input name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <label class="flex items-start gap-3 text-sm">
+          <input type="checkbox" name="privacy" required class="mt-1 size-4" />
+          <span>Ho letto l'<a href={href('privacy/')} class="underline underline-offset-2">informativa privacy</a>.</span>
+        </label>
+        <button type="submit" class="btn w-full bg-primary text-on-primary hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:opacity-50">
+          Invia richiesta
+        </button>
+      </fieldset>
+    </form>
+  </div>
+</Section>
