@@ -1,0 +1,137 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "food-beverage",
+  "subtype": "restaurant",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "La Taverna di Santa Chiara",
+    "legalName": "La Taverna S.n.c. di Nives Monda",
+    "vatNumber": "07988861212",
+    "address": { "street": "Via Santa Chiara, 6", "postalCode": "80134", "city": "Napoli", "province": "NA" },
+    "geo": { "lat": 40.8473602, "lng": 14.25323 },
+    "phone": "081 0484908",
+    "whatsapp": "393 9557558",
+    "hours": {
+      "mon": [{ "open": "12:00", "close": "15:00" }, { "open": "19:00", "close": "23:00" }],
+      "tue": [{ "open": "19:00", "close": "23:00" }],
+      "wed": [{ "open": "12:00", "close": "15:00" }, { "open": "19:00", "close": "23:00" }],
+      "thu": [{ "open": "12:00", "close": "15:00" }, { "open": "19:00", "close": "23:00" }],
+      "fri": [{ "open": "12:00", "close": "15:00" }, { "open": "19:00", "close": "23:00" }],
+      "sat": [{ "open": "12:00", "close": "15:00" }, { "open": "19:00", "close": "23:00" }],
+      "sun": [{ "open": "12:00", "close": "15:00" }]
+    },
+    "socials": { "facebook": "https://www.facebook.com/taverna.santachiara" },
+    "googleMapsUrl": "https://www.google.it/maps/place/La+Taverna+di+Santa+Chiara/@40.8474719,14.2523275,326m/data=!3m1!1e3!4m6!3m5!1s0x133b08449c550ddd:0x68be4b06c9dd18f!8m2!3d40.847418!4d14.253226!16s%2Fg%2F11bw613ksc"
+  },
+  "copy": {
+    "headline": "Cucina napoletana a Santa Chiara",
+    "tagline": "Zuppa di scarole e fagioli, ziti alla genovese e baccalà fritto in via Santa Chiara.",
+    "about": "La Taverna di Santa Chiara è un ristorante di cucina napoletana in via Santa Chiara, a Napoli.\n\nIn tavola trovi zuppa di scarole e fagioli, ziti alla genovese, pasta e piselli, polpette al sugo e carne alla pizzaiola.\n\nChiamaci allo 081 0484908 o scrivici su WhatsApp."
+  },
+  "foodBeverage": {
+    "cuisine": ["Napoletana"],
+    "specialities": [
+      { "name": "Zuppa di scarole e fagioli", "description": "Con i fagioli dente di morto di Acerra." },
+      { "name": "Ziti alla genovese" },
+      { "name": "Pasta e piselli", "description": "Con i piselli Centogiorni del Vesuvio." },
+      { "name": "Riso con la verza" },
+      { "name": "Polpette al sugo" },
+      { "name": "Carne alla pizzaiola" },
+      { "name": "Baccalà fritto" },
+      { "name": "Alicelle fritte" }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?q=Taverna+Santa+Chiara,+Napoli&format=json&addressdetails=1&extratags=1",
+        "https://www.gamberorosso.it/notizie/ristoranti/la-piccola-taverna-nascosta-nel-centro-storico-di-napoli-dove-si-mangia-una-buona-cucina-tradizionale/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "\"La Taverna di Santa Chiara\" on the Google Maps listing (user's anchor) and OpenStreetMap; Gambero Rosso \"Taverna di Santa Chiara\". PagineGialle: \"La Taverna a Santa Chiara\"; press also \"Taverna Santa Chiara\" / \"Taverna a Santa Chiara\"."
+    },
+    "business.legalName": {
+      "urls": ["https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339"],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "PagineGialle only (both of its listings, one database). Owner Nives Monda confirmed by Gambero Rosso and Scatti di Gusto."
+    },
+    "business.vatNumber": {
+      "urls": ["https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339"],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Not shown on the page: decoded from PagineGialle's embedded business data. VIES returns isValid: false (no evidence either way). Not found in any registry page."
+    },
+    "business.address": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339",
+        "https://www.scattidigusto.it/chiocciole-slow-food-2024-mangiare-bene-spendendo-poco",
+        "https://nominatim.openstreetmap.org/search?q=Taverna+Santa+Chiara,+Napoli&format=json&addressdetails=1&extratags=1"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "A second PagineGialle listing (same phone, same P.IVA) gives Via Domenico Aulisio Isola E5c, 80143 (Centro Direzionale): likely the registered office, not the restaurant."
+    },
+    "business.geo": {
+      "urls": ["https://nominatim.openstreetmap.org/search?q=Taverna+Santa+Chiara,+Napoli&format=json&addressdetails=1&extratags=1"],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "OpenStreetMap amenity=restaurant named \"La Taverna di Santa Chiara\" at Via Santa Chiara 6; within ~10 m of the Google Maps pin."
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339",
+        "https://www.scattidigusto.it/chiocciole-slow-food-2024-mangiare-bene-spendendo-poco"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.whatsapp": {
+      "urls": ["https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339"],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "PagineGialle lists 393 9557558 as a mobile, marked for WhatsApp."
+    },
+    "business.hours": {
+      "urls": ["https://www.paginegialle.it/napoli-na/ristoranti/la-taverna-s-n-c-di-nives-monda_19924339"],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "PagineGialle only. Tuesday dinner only, Sunday lunch only."
+    },
+    "business.socials": {
+      "urls": [
+        "https://www.scattidigusto.it/2021/02/24/taverna-santa-chiara-il-crowdfunding-dei-clienti-salva-il-ristorante-di-napoli",
+        "https://www.facebook.com/taverna.santachiara"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Linked by Scatti di Gusto; the Facebook page is titled \"Taverna Santa Chiara\", Naples, but its content could not be read."
+    },
+    "business.googleMapsUrl": {
+      "urls": ["https://www.google.it/maps/place/La+Taverna+di+Santa+Chiara/@40.8474719,14.2523275,326m/data=!3m1!1e3!4m6!3m5!1s0x133b08449c550ddd:0x68be4b06c9dd18f!8m2!3d40.847418!4d14.253226!16s%2Fg%2F11bw613ksc"],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Link supplied by the user as the anchor; the listing itself could not be fetched."
+    },
+    "foodBeverage.cuisine": {
+      "urls": [
+        "https://www.gamberorosso.it/notizie/ristoranti/la-piccola-taverna-nascosta-nel-centro-storico-di-napoli-dove-si-mangia-una-buona-cucina-tradizionale/",
+        "https://www.rollingstone.it/cultura/societa/taverna-a-santa-chiara-napoli-ecco-la-politica-cose/981965/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "PagineGialle: \"Cucina campana\"; OpenStreetMap: cuisine=regional."
+    },
+    "foodBeverage.specialities": {
+      "urls": [
+        "https://www.gamberorosso.it/notizie/ristoranti/la-piccola-taverna-nascosta-nel-centro-storico-di-napoli-dove-si-mangia-una-buona-cucina-tradizionale/",
+        "https://www.rollingstone.it/cultura/societa/taverna-a-santa-chiara-napoli-ecco-la-politica-cose/981965/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "All dishes from Gambero Rosso (12 Apr 2025); only the zuppa di scarole e fagioli is also in Rolling Stone (7 May 2025). Gambero Rosso writes \"pasta e piselli Centogiorni del Vesuvio\" and \"ziti alla genovese\". The menu may have changed since."
+    }
+  }
+}
