@@ -1,5 +1,5 @@
 ---
-// Sticky bottom bar on small screens: the three actions a local customer actually takes.
+// Sticky bottom bar on small screens: the (at most three) actions a local customer actually takes.
 import { directionsHref, telHref, whatsappHref } from '../lib/format';
 import { loadSite } from '../lib/site';
 
@@ -8,6 +8,8 @@ const b = site.business;
 const actions = [
   b.phone && { label: 'Chiama', href: telHref(b.phone) },
   b.whatsapp && { label: 'WhatsApp', href: whatsappHref(b.whatsapp) },
+  // A directory profile stands in for the phone when none is public.
+  !b.phone && b.directory && { label: b.directory.name, href: b.directory.url },
   { label: 'Indicazioni', href: directionsHref(b) },
 ].filter((a): a is { label: string; href: string } => Boolean(a));
 ---

@@ -1,0 +1,14 @@
+---
+// Health `areas` section: the issues a source says the practitioner works with, as a plain list (no promises of results).
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { site, voice } = loadSite();
+const areas = site.health!.areas!;
+---
+
+<Section id="aree" title={voice.areas}>
+  <ul class="flex flex-wrap gap-3">
+    {areas.map((a) => <li class="rounded-full border border-text/15 bg-surface px-5 py-2 font-semibold">{a}</li>)}
+  </ul>
+</Section>

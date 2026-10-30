@@ -3,12 +3,12 @@ import { Picture } from 'astro:assets';
 import Section from '../Section.astro';
 import { loadSite } from '../../lib/site';
 
-const { site, images } = loadSite();
+const { site, images, voice } = loadSite();
 const paragraphs = (site.copy.about ?? '').split(/\n\s*\n/).filter(Boolean);
 const image = images.about;
 ---
 
-<Section id="chi-siamo" title="Chi siamo">
+<Section id="chi-siamo" title={voice.about}>
   <div class:list={['grid items-center gap-10', image && 'md:grid-cols-2']}>
     <div class="max-w-prose space-y-4 text-lg">
       {paragraphs.map((p) => <p>{p}</p>)}

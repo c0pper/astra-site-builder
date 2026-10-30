@@ -53,6 +53,8 @@ const business = z.strictObject({
     .optional(),
   socials: z.strictObject({ facebook: z.url().optional(), instagram: z.url().optional() }).optional(),
   googleMapsUrl: z.url().optional(),
+  /** A directory profile people contact the business through (MioDottore, TheFork): shown as a contact action. */
+  directory: z.strictObject({ name: z.string().min(1), url: z.url() }).optional(),
   rating: z.strictObject({ value: z.number().min(0).max(5), count: z.int().min(0), url: z.url() }).optional(),
 });
 
@@ -79,6 +81,20 @@ const extensions = {
     menu: z.strictObject({ url: z.url() }).optional(),
     booking: z.strictObject({ url: z.url().optional(), phone: phone.optional() }).optional(),
   }),
+  health: z.strictObject({
+    /** The professional title as a source states it, e.g. "Psicologa psicoterapeuta". Replaces the sub-type label. */
+    title: z.string().min(1).optional(),
+    /** Registration with the professional order (Albo). The number only if a source shows it. */
+    registration: z.strictObject({ board: z.string().min(1), number: z.string().min(1).optional() }).optional(),
+    /** Specialisations and therapeutic approaches, as a source names them. */
+    specializations: z.array(z.string().min(1)).optional(),
+    /** Issues a source says the practitioner works with, e.g. "Ansia". */
+    areas: z.array(z.string().min(1)).optional(),
+    services: z.array(service).optional(),
+    /** Languages other than Italian that sessions can be held in. */
+    languages: z.array(z.string().min(1)).optional(),
+    booking: z.strictObject({ url: z.url().optional(), phone: phone.optional() }).optional(),
+  }),
   // Filled in when each category is built (PLAN "After MVP").
   fitness: z.strictObject({}),
   trades: z.strictObject({}),
@@ -94,6 +110,7 @@ export const EXTENSION_FOR_CATEGORY: Record<CategoryId, ExtensionKey> = {
   'food-beverage': 'foodBeverage',
   fitness: 'fitness',
   trades: 'trades',
+  health: 'health',
 };
 
 const CONFIDENCE = ['low', 'medium', 'high', 'verified'] as const;
@@ -130,8 +147,14 @@ export const siteSchema = z
     sections: z.array(z.enum(SECTION_IDS)).optional(),
     /** Free-form marketing copy. States only facts that are sourced elsewhere in this file. */
     copy: z
-      .strictObject({ headline: z.string().optional(), tagline: z.string().optional(), about: z.string().optional() })
-      .default({}),
+      .strictObject({
+        headline: z.string().optional(),
+        tagline: z.string().optional(),
+        about: z.string().optional(),
+        /** Who speaks in the page's own words: "we" for a business, "i" for an individual practitioner. */
+        voice: z.enum(['we', 'i']).default('we'),
+      })
+      .default({ voice: 'we' }),
     seo: z.strictObject({ title: z.string().optional(), description: z.string().optional() }).default({}),
     ...Object.fromEntries(Object.entries(extensions).map(([k, s]) => [k, s.optional()])) as {
       [K in ExtensionKey]: z.ZodOptional<(typeof extensions)[K]>;
@@ -159,6 +182,10 @@ export const siteSchema = z
       if (site[key] && key !== ownExtension && key !== 'retail') {
         issue([key], `Extension "${key}" does not belong to category "${site.category}" (use "${ownExtension}")`);
       }
+    }
+
+    if (site.business.rating && !CATEGORIES[site.category].allowsRatings) {
+      issue(['business', 'rating'], `Category "${site.category}" shows no ratings (health advertising must be informative only)`);
     }
 
     // Generic services: allowed only where the category permits, and only from the registry list.
@@ -212,16 +239,20 @@ export const siteSchema = z
 
 export type Site = z.output<typeof siteSchema>;
 
+type WithServices = Pick<Site, 'category' | 'automotive' | 'foodBeverage' | 'health'>;
+const hasServices = (ext: ExtensionKey): ext is 'automotive' | 'foodBeverage' | 'health' =>
+  ext === 'automotive' || ext === 'foodBeverage' || ext === 'health';
+
 /** The service list of the site's own category extension. */
-export function siteServices(site: Pick<Site, 'category' | 'automotive' | 'foodBeverage'>) {
+export function siteServices(site: WithServices) {
   const ext = EXTENSION_FOR_CATEGORY[site.category];
-  return (ext === 'automotive' || ext === 'foodBeverage' ? site[ext]?.services : undefined) ?? [];
+  return (hasServices(ext) ? site[ext]?.services : undefined) ?? [];
 }
 
 /** The booking CTA of the site's own category extension. */
-export function siteBooking(site: Pick<Site, 'category' | 'automotive' | 'foodBeverage'>) {
+export function siteBooking(site: WithServices) {
   const ext = EXTENSION_FOR_CATEGORY[site.category];
-  return ext === 'automotive' || ext === 'foodBeverage' ? site[ext]?.booking : undefined;
+  return hasServices(ext) ? site[ext]?.booking : undefined;
 }
 
 export type ParseResult = { ok: true; site: Site } | { ok: false; error: string };

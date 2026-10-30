@@ -5,13 +5,13 @@ import Section from '../Section.astro';
 import { directionsHref, formatAddress } from '../../lib/format';
 import { loadSite } from '../../lib/site';
 
-const { site } = loadSite();
+const { site, voice } = loadSite();
 const b = site.business;
 const geo = b.geo;
 const address = formatAddress(b.address);
 ---
 
-<Section id="dove-siamo" title="Dove siamo">
+<Section id="dove-siamo" title={voice.where}>
   <p class="text-lg">{address}</p>
   <a href={directionsHref(b)} class="btn mt-4 bg-primary text-on-primary hover:opacity-90" rel="noopener">
     Ottieni indicazioni

@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import About from '../components/sections/About.astro';
+import Areas from '../components/sections/Areas.astro';
 import Booking from '../components/sections/Booking.astro';
 import Brands from '../components/sections/Brands.astro';
 import Contact from '../components/sections/Contact.astro';
+import Credentials from '../components/sections/Credentials.astro';
 import Gallery from '../components/sections/Gallery.astro';
 import Hero from '../components/sections/Hero.astro';
 import Hours from '../components/sections/Hours.astro';
@@ -34,6 +36,8 @@ const COMPONENTS: Partial<Record<SectionId, (props: Record<string, never>) => un
   booking: Booking,
   products: Specialities,
   menu: Menu,
+  areas: Areas,
+  credentials: Credentials,
   'retail-categories': RetailCategories,
   'retail-brands': RetailBrands,
 };

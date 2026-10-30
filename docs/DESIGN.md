@@ -59,6 +59,7 @@ Registry-driven. Code identifiers are English; every visitor-facing label is Ita
 | trades | `locksmith-metalwork` | Locksmith | Fabbro |
 | trades | `upholsterer` | HomeAndConstructionBusiness | Tappezziere |
 | trades | `builder` | GeneralContractor | Impresa edile |
+| health | `psychologist` | MedicalBusiness | Psicologo |
 
 ### Extending
 
@@ -69,13 +70,14 @@ Registry-driven. Code identifiers are English; every visitor-facing label is Ita
 
 ## Template
 
-One base template with four category presets. Shared sections cover most of each site: hero, services, hours, map, reviews summary, contact, gallery, footer.
+One base template with five category presets. Shared sections cover most of each site: hero, services, hours, map, reviews summary, contact, gallery, footer.
 
 Category presets add:
 - **Food & Beverage:** specialities and cuisine (the `products` section), a link out to the business's own published menu (`menu`), services (take-away, delivery, outdoor tables), table booking CTA. Prices are never copied into the site: the menu section links to the source, which stays current.
 - **Fitness:** class schedule, plans/prices
 - **Trades:** service list, service area (comuni), emergency availability, quote CTA
 - **Automotive:** services, brands handled, seasonal tyre-change banner, booking CTA
+- **Health** (individual practitioners first): areas of work (`areas`), professional profile (`credentials`: title, specialisations, Albo registration, languages), services, booking CTA. Health professionals may advertise only informative content (L. 145/2018, art. 1 c. 525), so the category shows **no ratings or reviews** (the schema rejects `business.rating`), no prices and no generic services. The practitioner's sourced title ("Psicologa psicoterapeuta") replaces the sub-type label.
 
 **Retail section set** (product categories, brands carried, "chiedi disponibilità" CTA) is built now and available to any preset, enabled by sub-type. No current sub-type uses it; it is validated against a fixture site.
 
@@ -88,8 +90,10 @@ Each preset offers 4–6 palettes, 2–3 font pairings and 2–3 layout variants
 Validated with Zod. An invalid file fails the build, which gives the agent its fix loop.
 
 - **Core:** `business` (name, ragione sociale, P.IVA, address, geo, phone, WhatsApp, email, hours incl. seasonal closures, socials), `category`, `subtype` (primary), `secondarySubtypes`, `theme`, `sections[]` (ordered, toggleable), `seo`, `status` (`spec` | `live`), `previewExpires`
-- **Extension block** per category: `automotive`, `foodBeverage`, `fitness`, `trades`, plus optional `retail`
+- **Core** also has `business.directory` (name + URL of a directory profile people contact the business through, e.g. MioDottore): a contact action everywhere, and the primary one when no phone is public. `copy.voice` (`we` | `i`) sets who speaks in the template's own words: "Chi siamo" vs "Chi sono", "contattaci" vs "contattami".
+- **Extension block** per category: `automotive`, `foodBeverage`, `fitness`, `trades`, `health`, plus optional `retail`
   - `foodBeverage`: `cuisine` (e.g. "Napoletana"), `specialities` (dishes a source names, optional description), `services`, `menu.url`, `booking` (url and/or phone). Food & Beverage has no generic services: an unsourced list stays empty.
+  - `health`: `title` (as a source states it), `registration` (Albo board, number only if shown), `specializations`, `areas`, `services`, `languages`, `booking`.
 - **`sources`:** keyed by fact path (`business.<key>`, `<extension>.<key>`): URLs + retrieval date + `confidence` (`low | medium | high | verified`; `verified` = confirmed by the client and may have no URL). Every present fact needs a source, and every source must match a fact. Service lists made only of generic services are exempt.
 - **Generic services** must be names from the registry's `genericServices` for the site's sub-types.
 - **JSON-LD** `LocalBusiness` with the correct subtype is generated from it.

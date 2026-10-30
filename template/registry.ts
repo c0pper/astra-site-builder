@@ -26,13 +26,16 @@ export const SECTION_IDS = [
   'service-area',
   'emergency',
   'quote',
+  // health
+  'areas',
+  'credentials',
   // retail (any category)
   'retail-categories',
   'retail-brands',
 ] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 
-export const CATEGORY_IDS = ['automotive', 'food-beverage', 'fitness', 'trades'] as const;
+export const CATEGORY_IDS = ['automotive', 'food-beverage', 'fitness', 'trades', 'health'] as const;
 export type CategoryId = (typeof CATEGORY_IDS)[number];
 
 export interface Category {
@@ -41,6 +44,11 @@ export interface Category {
   defaultSections: SectionId[];
   /** Whether sub-types may show generic, unsourced service lists (flagged in REVIEW.md). */
   allowsGenericServices: boolean;
+  /**
+   * Whether the site may show a rating. Health professions may advertise only informative content, with nothing
+   * promotional or suggestive (L. 145/2018, art. 1 c. 525), so their sites show no ratings or reviews.
+   */
+  allowsRatings: boolean;
 }
 
 export const CATEGORIES: Record<CategoryId, Category> = {
@@ -48,21 +56,31 @@ export const CATEGORIES: Record<CategoryId, Category> = {
     label: 'Automotive',
     defaultSections: ['hero', 'services', 'brands', 'booking', 'about', 'reviews', 'gallery', 'hours', 'contact', 'map'],
     allowsGenericServices: true,
+    allowsRatings: true,
   },
   'food-beverage': {
     label: 'Food & Beverage',
     defaultSections: ['hero', 'products', 'menu', 'services', 'booking', 'about', 'reviews', 'gallery', 'hours', 'contact', 'map'],
     allowsGenericServices: false,
+    allowsRatings: true,
   },
   fitness: {
     label: 'Fitness & Sports',
     defaultSections: ['hero', 'about', 'schedule', 'plans', 'reviews', 'gallery', 'hours', 'contact', 'map'],
     allowsGenericServices: false,
+    allowsRatings: true,
   },
   trades: {
     label: 'Trades & Construction',
     defaultSections: ['hero', 'services', 'emergency', 'service-area', 'quote', 'about', 'reviews', 'gallery', 'hours', 'contact', 'map'],
     allowsGenericServices: true,
+    allowsRatings: true,
+  },
+  health: {
+    label: 'Salute',
+    defaultSections: ['hero', 'about', 'services', 'areas', 'credentials', 'booking', 'contact', 'hours', 'map'],
+    allowsGenericServices: false,
+    allowsRatings: false,
   },
 };
 
@@ -81,6 +99,7 @@ export const SUBTYPE_IDS = [
   'locksmith-metalwork',
   'upholsterer',
   'builder',
+  'psychologist',
 ] as const;
 export type SubtypeId = (typeof SUBTYPE_IDS)[number];
 
@@ -162,6 +181,8 @@ export const SUBTYPES: Record<SubtypeId, Subtype> = {
     label: 'Impresa edile',
     genericServices: ['Ristrutturazioni', 'Opere murarie', 'Nuove costruzioni'],
   },
+  // schema.org has no psychologist type; MedicalBusiness is the closest that isn't a physician.
+  psychologist: { category: 'health', schemaType: 'MedicalBusiness', label: 'Psicologo' },
 };
 
 /** Section order for a site: category defaults, with the primary sub-type's extras after the hero. */

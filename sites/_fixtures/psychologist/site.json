@@ -1,0 +1,38 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "health",
+  "subtype": "psychologist",
+  "business": {
+    "name": "Dott.ssa Anna Esempio",
+    "address": { "street": "Via degli Esempi, 7", "postalCode": "80139", "city": "Napoli", "province": "NA" },
+    "geo": { "lat": 40.8601, "lng": 14.2633 },
+    "directory": { "name": "MioDottore", "url": "https://example.com/profilo" }
+  },
+  "copy": {
+    "voice": "i",
+    "headline": "Psicologa e psicoterapeuta a Napoli",
+    "tagline": "Psicoterapia sistemico relazionale per individui, coppie e famiglie.",
+    "about": "Sono una psicologa e psicoterapeuta sistemico relazionale.\n\nRicevo nel mio studio di Napoli e online."
+  },
+  "health": {
+    "title": "Psicologa psicoterapeuta",
+    "registration": { "board": "Ordine degli Psicologi della Campania", "number": "0000" },
+    "specializations": ["Psicoterapia sistemico relazionale"],
+    "areas": ["Ansia", "Crisi relazionali"],
+    "services": [{ "name": "Colloquio psicologico individuale" }, { "name": "Psicoterapia online" }],
+    "languages": ["Inglese"]
+  },
+  "sources": {
+    "business.name": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.address": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.geo": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "business.directory": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "high" },
+    "health.title": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "health.registration": { "urls": ["https://example.com/albo"], "retrieved": "2026-10-30", "confidence": "high" },
+    "health.specializations": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "health.areas": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "health.services": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "health.languages": { "urls": ["https://example.com/profilo"], "retrieved": "2026-10-30", "confidence": "medium" }
+  }
+}

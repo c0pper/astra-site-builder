@@ -7,7 +7,7 @@ interface Props {
   tone?: 'default' | 'onDark';
 }
 const { tone = 'default' } = Astro.props;
-const { site } = loadSite();
+const { site, voice } = loadSite();
 const b = site.business;
 const secondary =
   tone === 'onDark'
@@ -20,7 +20,14 @@ const secondary =
   {
     b.whatsapp && (
       <a href={whatsappHref(b.whatsapp)} class:list={['btn', secondary]} rel="noopener">
-        Scrivici su WhatsApp
+        {voice.write} su WhatsApp
+      </a>
+    )
+  }
+  {
+    b.directory && (
+      <a href={b.directory.url} class:list={['btn', b.phone ? secondary : 'bg-accent text-on-accent hover:opacity-90']} rel="noopener">
+        Contatti su {b.directory.name}
       </a>
     )
   }

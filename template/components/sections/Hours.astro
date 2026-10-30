@@ -4,7 +4,7 @@ import Section from '../Section.astro';
 import { DAYS, formatDate, telHref } from '../../lib/format';
 import { loadSite } from '../../lib/site';
 
-const { site } = loadSite();
+const { site, voice } = loadSite();
 const { hours, seasonalClosures = [], phone } = site.business;
 const known = hours ? DAYS.filter(([key]) => hours[key] !== undefined) : [];
 ---
@@ -33,9 +33,9 @@ const known = hours ? DAYS.filter(([key]) => hours[key] !== undefined) : [];
       <p class="text-lg">
         Per conoscere gli orari di apertura{' '}
         {phone ? (
-          <a href={telHref(phone)} class="font-semibold text-ink underline underline-offset-4">chiamaci</a>
+          <a href={telHref(phone)} class="font-semibold text-ink underline underline-offset-4">{voice.call}</a>
         ) : (
-          'contattaci'
+          voice.contact
         )}.
       </p>
     )

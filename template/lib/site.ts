@@ -5,6 +5,13 @@ import { parseSite, siteBooking, siteServices, type Site } from '../schema/site.
 import { siteImages, type SiteImages } from './images.ts';
 import { resolveTheme, type Theme, type Variants } from './theme.ts';
 
+/** Words that change with who speaks: a business ("noi") or an individual practitioner ("io"). */
+const VOICE = {
+  we: { about: 'Chi siamo', areas: 'Di cosa ci occupiamo', where: 'Dove siamo', contact: 'contattaci', call: 'chiamaci', write: 'Scrivici' },
+  i: { about: 'Chi sono', areas: 'Di cosa mi occupo', where: 'Dove ricevo', contact: 'contattami', call: 'chiamami', write: 'Scrivimi' },
+} as const;
+export type Voice = (typeof VOICE)[keyof typeof VOICE];
+
 export interface SiteContext {
   slug: string;
   site: Site;
@@ -16,8 +23,9 @@ export interface SiteContext {
   heroLayout: Variants['hero'];
   /** The home page opens on a full-bleed hero (photo or primary colour) that the transparent header sits on. */
   heroUnderHeader: boolean;
-  /** Visitor-facing sub-type label, e.g. "Gommista". */
+  /** Visitor-facing sub-type label, e.g. "Gommista", or the practitioner's sourced title. */
   label: string;
+  voice: Voice;
   /** The service list of the site's category extension, if any. */
   services: { name: string; description?: string; generic?: boolean }[];
 }
@@ -50,7 +58,8 @@ export function loadSite(): SiteContext {
     images,
     heroLayout,
     heroUnderHeader: sections[0] === 'hero' && heroLayout !== 'split',
-    label: SUBTYPES[site.subtype].label,
+    label: site.health?.title ?? SUBTYPES[site.subtype].label,
+    voice: VOICE[site.copy.voice],
     services,
   };
   return cached;
@@ -82,6 +91,10 @@ function hasContent(id: SectionId, site: Site, counts: { gallery: number; servic
       return Boolean(site.foodBeverage?.menu);
     case 'seasonal-banner':
       return Boolean(site.business.phone || site.business.whatsapp);
+    case 'areas':
+      return Boolean(site.health?.areas?.length);
+    case 'credentials':
+      return Boolean(site.health?.registration || site.health?.specializations?.length || site.health?.languages?.length);
     case 'retail-categories':
       return Boolean(site.retail?.categories?.length);
     case 'retail-brands':

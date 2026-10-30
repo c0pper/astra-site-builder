@@ -6,11 +6,13 @@ import Section from '../Section.astro';
 import { formatAddress, href, telHref } from '../../lib/format';
 import { loadSite } from '../../lib/site';
 
-const { site } = loadSite();
+const { site, voice } = loadSite();
 const b = site.business;
 const isSpec = site.status === 'spec';
 // Name only the channels this site actually shows.
-const channels = [b.phone && 'per telefono', b.whatsapp && 'su WhatsApp'].filter(Boolean).join(' o ');
+const channels = [b.phone && 'per telefono', b.whatsapp && 'su WhatsApp', b.directory && `su ${b.directory.name}`]
+  .filter(Boolean)
+  .join(' o ');
 const field = 'mt-1 w-full rounded-lg border border-text/20 bg-surface px-3 py-2.5 disabled:opacity-60';
 ---
 
@@ -38,6 +40,16 @@ const field = 'mt-1 w-full rounded-lg border border-text/20 bg-surface px-3 py-2
             </div>
           )
         }
+        {
+          b.directory && (
+            <div>
+              <dt class="text-sm text-muted">Profilo</dt>
+              <dd>
+                <a href={b.directory.url} class="font-semibold text-ink" rel="noopener">{b.directory.name}</a>
+              </dd>
+            </div>
+          )
+        }
         <div>
           <dt class="text-sm text-muted">Indirizzo</dt>
           <dd>{formatAddress(b.address)}</dd>
@@ -48,11 +60,11 @@ const field = 'mt-1 w-full rounded-lg border border-text/20 bg-surface px-3 py-2
 
     <form method="post" action={href('api/contact')} class="space-y-4 rounded-2xl bg-surface p-6 shadow-sm">
       <fieldset disabled={isSpec} class="space-y-4">
-        <legend class="font-heading text-xl font-bold">Scrivici</legend>
+        <legend class="font-heading text-xl font-bold">{voice.write}</legend>
         {
           isSpec && (
             <p class="rounded-lg bg-accent/15 px-4 py-3 text-sm">
-              Il modulo sarà attivo dopo la pubblicazione del sito.{channels && ` Nel frattempo contattaci ${channels}.`}
+              Il modulo sarà attivo dopo la pubblicazione del sito.{channels && ` Nel frattempo ${voice.contact} ${channels}.`}
             </p>
           )
         }

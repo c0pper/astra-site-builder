@@ -10,7 +10,7 @@ interface Props {
 }
 const { overHero = false } = Astro.props;
 const { site, label, heroLayout } = loadSite();
-const { name, phone } = site.business;
+const { name, phone, directory } = site.business;
 ---
 
 <header
@@ -27,6 +27,13 @@ const { name, phone } = site.business;
       phone && (
         <a href={telHref(phone)} data-call class="btn hidden shrink-0 bg-primary text-on-primary hover:opacity-90 sm:inline-flex">
           Chiama {phone}
+        </a>
+      )
+    }
+    {
+      !phone && directory && (
+        <a href={directory.url} data-call class="btn hidden shrink-0 bg-primary text-on-primary hover:opacity-90 sm:inline-flex" rel="noopener">
+          Contatti su {directory.name}
         </a>
       )
     }

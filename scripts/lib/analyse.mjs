@@ -1,12 +1,11 @@
 // What a reviewer must look at in a site.json: shared by REVIEW.md (scripts/review.mjs) and the batch report.
-import { siteSchema } from '../../template/schema/site.ts';
+import { EXTENSION_FOR_CATEGORY, siteSchema } from '../../template/schema/site.ts';
 
-const EXTENSION = { automotive: 'automotive', 'food-beverage': 'foodBeverage', fitness: 'fitness', trades: 'trades' };
 const WEIGHT = { verified: 1, high: 1, medium: 0.6, low: 0.2 };
 const GENERIC_WEIGHT = 0.3;
 
 export function analyseSite(site) {
-  const ext = EXTENSION[site.category];
+  const ext = EXTENSION_FOR_CATEGORY[site.category];
   const blocks = [
     ['business', siteSchema.shape.business.shape, site.business],
     [ext, siteSchema.shape[ext].unwrap().shape, site[ext]],

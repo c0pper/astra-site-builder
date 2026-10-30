@@ -35,6 +35,9 @@ export const DAYS = [
 export const formatDate = (iso: string) =>
   new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
 
+/** "inglese, francese e spagnolo" */
+export const formatList = (items: string[]) => new Intl.ListFormat('it', { type: 'conjunction' }).format(items);
+
 export const formatRating = (value: number) => value.toLocaleString('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
 /** Internal link that respects Astro's `base` (spec previews live under /<slug>/). */

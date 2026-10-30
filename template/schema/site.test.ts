@@ -14,7 +14,7 @@ function expectError(input: unknown, fragment: string) {
 
 describe('site.json schema', () => {
   it('accepts the fixtures', () => {
-    for (const name of ['empty', 'tyre-shop', 'restaurant']) {
+    for (const name of ['empty', 'tyre-shop', 'restaurant', 'psychologist']) {
       const result = parseSite(fixture(name));
       assert.ok(result.ok, result.ok ? '' : result.error);
     }
@@ -70,6 +70,25 @@ describe('site.json schema', () => {
     const site = fixture('restaurant');
     delete site.sources['foodBeverage.specialities'];
     expectError(site, 'Missing source for "foodBeverage.specialities"');
+  });
+
+  it('rejects a rating on a health site', () => {
+    const site = fixture('psychologist');
+    site.business.rating = { value: 5, count: 3, url: 'https://example.com/profilo' };
+    site.sources['business.rating'] = { urls: ['https://example.com/profilo'], retrieved: '2026-10-30', confidence: 'high' };
+    expectError(site, 'Category "health" shows no ratings');
+  });
+
+  it('rejects generic services on a health site', () => {
+    const site = fixture('psychologist');
+    site.health.services.push({ name: 'Psicoterapia', generic: true });
+    expectError(site, 'Category "health" does not allow generic services');
+  });
+
+  it('requires a source for the professional title', () => {
+    const site = fixture('psychologist');
+    delete site.sources['health.title'];
+    expectError(site, 'Missing source for "health.title"');
   });
 
   it('requires previewExpires on spec sites', () => {
