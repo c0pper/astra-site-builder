@@ -1,7 +1,9 @@
 ---
 // No third-party request until the visitor asks for the map (cookieless by design):
 // Leaflet and its tiles load only on click.
+import { Picture } from 'astro:assets';
 import Section from '../Section.astro';
+import mapBackdrop from '../../assets/map/sfondo-mappa.jpg';
 import { directionsHref, formatAddress } from '../../lib/format';
 import { loadSite } from '../../lib/site';
 
@@ -27,11 +29,22 @@ const address = formatAddress(b.address);
         data-name={b.name}
         data-address={address}
       >
-        <div class="flex aspect-[16/9] flex-col items-center justify-center gap-3 bg-surface-alt p-6 text-center sm:aspect-[21/9]">
-          <button type="button" class="btn border border-ink/30 text-ink hover:bg-surface" data-map-load>
-            Mostra la mappa
-          </button>
-          <p class="max-w-sm text-sm text-muted">La mappa viene caricata da openstreetmap.org.</p>
+        <div class="relative isolate flex aspect-[4/3] items-center justify-center bg-surface-alt p-6 sm:aspect-[21/9]">
+          {/* A generic street map (not this business's area), blurred: a hint of what the button loads. Credited on /crediti. */}
+          <Picture
+            src={mapBackdrop}
+            alt=""
+            formats={['avif', 'webp']}
+            widths={[480, 800, 1200]}
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            class="absolute inset-0 -z-10 h-full w-full scale-105 object-cover blur-[3px]"
+          />
+          <div class="flex max-w-xs flex-col items-center gap-2 rounded-xl bg-surface p-4 text-center shadow-lg sm:max-w-sm sm:gap-3 sm:p-6">
+            <button type="button" class="btn bg-primary text-on-primary hover:opacity-90" data-map-load>
+              Mostra la mappa
+            </button>
+            <p class="text-sm text-muted">La mappa viene caricata da openstreetmap.org.</p>
+          </div>
         </div>
       </div>
     )
@@ -64,7 +77,7 @@ const address = formatAddress(b.address);
       const approximate = 'approximate' in box.dataset;
 
       const el = document.createElement('div');
-      el.className = 'block aspect-[16/9] w-full sm:aspect-[21/9]';
+      el.className = 'block aspect-[4/3] w-full sm:aspect-[21/9]';
       el.setAttribute('aria-label', `Mappa: ${name}, ${address}`);
       box.replaceChildren(el);
 
