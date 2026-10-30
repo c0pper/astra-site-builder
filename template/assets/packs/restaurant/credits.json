@@ -1,0 +1,181 @@
+[
+  {
+    "file": "piano-cucina-legno.jpg",
+    "alt": "Tagliere, padella di ghisa, coltelli e spezie su un piano di legno scuro",
+    "author": "Todd Quackenbush",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chef%27s_Station_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "hero",
+      "gallery"
+    ]
+  },
+  {
+    "file": "tavola-rustica-vino.jpg",
+    "alt": "Tavolo rustico in legno con piatti, calici di vino e fiori di campo",
+    "author": "Stefan Johnson",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vintage_wine_dinner_for_two_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "hero",
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "tavola-apparecchiata.jpg",
+    "alt": "Tavola in legno apparecchiata con zuppa, pane e vino rosso vicino alla finestra",
+    "author": "Brooke Lark",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Classy_meal_for_two_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "hero",
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "tavolo-luce-sole.jpg",
+    "alt": "Tavolo apparecchiato con calici e lavanda in una sala illuminata dal sole",
+    "author": "Paweł Wojciechowski",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dinner_at_a_bistro_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "hero",
+      "gallery"
+    ]
+  },
+  {
+    "file": "chef-impiattamento.jpg",
+    "alt": "Mani di uno chef che impiatta una fila di piatti in cucina",
+    "author": "Fabrizio Magoni",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gourmet_Chef_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "tagliatelle-fatte-in-casa.jpg",
+    "alt": "Nidi di tagliatelle fatte in casa su un tavolo di legno infarinato",
+    "author": "Sarah Boyle",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Handmade_pasta_noodles_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "antipasto-misto.jpg",
+    "alt": "Antipasto misto con bruschette, salumi, olive, peperoni e formaggio",
+    "author": "Rhosoi",
+    "authorUrl": "https://www.flickr.com/people/rhosoi/",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antipasto_Misto_Con_Bruschette.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "roles": [
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "calici-tovaglia.jpg",
+    "alt": "Calici e bicchieri su una tavola con tovaglia bianca",
+    "author": "James Harris",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wine_glasses_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "about",
+      "gallery"
+    ]
+  },
+  {
+    "file": "mozzarella-prosciutto.jpg",
+    "alt": "Mozzarella, prosciutto crudo e pomodori al forno su foglie di basilico",
+    "author": "Brenan Greene",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_Dish_for_High-End_Resturant_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "pappardelle-funghi.jpg",
+    "alt": "Piatto di pappardelle con funghi, salvia e formaggio grattugiato",
+    "author": "Eaters Collective",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plate_of_Pasta_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "spaghetti-carbonara.jpg",
+    "alt": "Piatto di spaghetti alla carbonara con pancetta e formaggio grattugiato",
+    "author": "Amin",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spaghetti_alla_Carbonara_2.jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "roles": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "tagliatelle-tovaglia-quadri.jpg",
+    "alt": "Tagliatelle al ragù su una tovaglia a quadri bianchi e rossi",
+    "author": "Philip Mallis",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pork_tagliatelle_pasta_dish_at_restaurant_in_Rome,_Italy.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "roles": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "ragu-napoletano.jpg",
+    "alt": "Pentola di ragù napoletano con un cucchiaio",
+    "author": "Kagor",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ragu_alla_napoletana_008.jpg",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "roles": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "pizza-rucola.jpg",
+    "alt": "Pizza bianca con rucola, pomodorini e scaglie di formaggio",
+    "author": "Brenan Greene",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pizza_for_High-End_Italian_Restaurant_(Unsplash).jpg",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "roles": [
+      "gallery"
+    ]
+  }
+]

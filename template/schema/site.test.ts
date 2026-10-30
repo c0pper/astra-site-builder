@@ -14,7 +14,7 @@ function expectError(input: unknown, fragment: string) {
 
 describe('site.json schema', () => {
   it('accepts the fixtures', () => {
-    for (const name of ['empty', 'tyre-shop']) {
+    for (const name of ['empty', 'tyre-shop', 'restaurant']) {
       const result = parseSite(fixture(name));
       assert.ok(result.ok, result.ok ? '' : result.error);
     }
@@ -58,6 +58,18 @@ describe('site.json schema', () => {
     const site = fixture('tyre-shop');
     site.automotive.services.push({ name: 'Assetto sportivo' });
     expectError(site, 'Missing source for "automotive.services"');
+  });
+
+  it('rejects generic services where the category has none', () => {
+    const site = fixture('restaurant');
+    site.foodBeverage.services.push({ name: 'Asporto', generic: true });
+    expectError(site, 'Category "food-beverage" does not allow generic services');
+  });
+
+  it('requires a source for specialities', () => {
+    const site = fixture('restaurant');
+    delete site.sources['foodBeverage.specialities'];
+    expectError(site, 'Missing source for "foodBeverage.specialities"');
   });
 
   it('requires previewExpires on spec sites', () => {

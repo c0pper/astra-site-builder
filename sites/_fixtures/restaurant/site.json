@@ -1,0 +1,48 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "food-beverage",
+  "subtype": "restaurant",
+  "business": {
+    "name": "Trattoria Esempio",
+    "address": { "street": "Via degli Esempi, 7", "postalCode": "80134", "city": "Napoli", "province": "NA" },
+    "geo": { "lat": 40.8474, "lng": 14.2532 },
+    "phone": "081 000 0001",
+    "hours": {
+      "tue": [{ "open": "12:30", "close": "15:00" }, { "open": "19:30", "close": "23:00" }],
+      "wed": [{ "open": "12:30", "close": "15:00" }, { "open": "19:30", "close": "23:00" }],
+      "mon": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+Esempio",
+    "rating": { "value": 4.5, "count": 900, "url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Esempio" }
+  },
+  "copy": {
+    "headline": "Cucina napoletana nel centro storico",
+    "tagline": "Genovese e pasta e patate. Prenota un tavolo per telefono.",
+    "about": "Trattoria Esempio cucina piatti napoletani nel centro storico di Napoli."
+  },
+  "foodBeverage": {
+    "cuisine": ["Napoletana"],
+    "specialities": [
+      { "name": "Genovese", "description": "Pasta con sugo di cipolle e carne cotto a lungo." },
+      { "name": "Pasta e patate con la provola" }
+    ],
+    "services": [{ "name": "Asporto" }],
+    "menu": { "url": "https://example.com/menu" },
+    "booking": { "phone": "081 000 0001" }
+  },
+  "sources": {
+    "business.name": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.address": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.geo": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.phone": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.hours": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "business.googleMapsUrl": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "business.rating": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
+    "foodBeverage.cuisine": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "foodBeverage.specialities": { "urls": ["https://example.com/menu"], "retrieved": "2026-10-30", "confidence": "high" },
+    "foodBeverage.services": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "foodBeverage.menu": { "urls": ["https://example.com/menu"], "retrieved": "2026-10-30", "confidence": "high" },
+    "foodBeverage.booking": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" }
+  }
+}

@@ -8,11 +8,13 @@ import Gallery from '../components/sections/Gallery.astro';
 import Hero from '../components/sections/Hero.astro';
 import Hours from '../components/sections/Hours.astro';
 import Map from '../components/sections/Map.astro';
+import Menu from '../components/sections/Menu.astro';
 import RetailBrands from '../components/sections/RetailBrands.astro';
 import RetailCategories from '../components/sections/RetailCategories.astro';
 import Reviews from '../components/sections/Reviews.astro';
 import SeasonalBanner from '../components/sections/SeasonalBanner.astro';
 import Services from '../components/sections/Services.astro';
+import Specialities from '../components/sections/Specialities.astro';
 import type { SectionId } from '../registry';
 import { localBusinessJsonLd } from '../lib/jsonld';
 import { loadSite } from '../lib/site';
@@ -30,6 +32,8 @@ const COMPONENTS: Partial<Record<SectionId, (props: Record<string, never>) => un
   brands: Brands,
   'seasonal-banner': SeasonalBanner,
   booking: Booking,
+  products: Specialities,
+  menu: Menu,
   'retail-categories': RetailCategories,
   'retail-brands': RetailBrands,
 };

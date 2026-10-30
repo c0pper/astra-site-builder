@@ -51,6 +51,7 @@ Registry-driven. Code identifiers are English; every visitor-facing label is Ita
 | automotive | `auto-electrician` | AutoRepair | Elettrauto |
 | food-beverage | `bakery` | Bakery | Panificio |
 | food-beverage | `pastry-shop` | Bakery | Pasticceria |
+| food-beverage | `restaurant` | Restaurant | Ristorante |
 | fitness | `gym` | ExerciseGym | Palestra |
 | trades | `plumber` | Plumber | Idraulico |
 | trades | `electrician` | Electrician | Elettricista |
@@ -71,7 +72,7 @@ Registry-driven. Code identifiers are English; every visitor-facing label is Ita
 One base template with four category presets. Shared sections cover most of each site: hero, services, hours, map, reviews summary, contact, gallery, footer.
 
 Category presets add:
-- **Food & Beverage:** products/specialities, menu
+- **Food & Beverage:** specialities and cuisine (the `products` section), a link out to the business's own published menu (`menu`), services (take-away, delivery, outdoor tables), table booking CTA. Prices are never copied into the site: the menu section links to the source, which stays current.
 - **Fitness:** class schedule, plans/prices
 - **Trades:** service list, service area (comuni), emergency availability, quote CTA
 - **Automotive:** services, brands handled, seasonal tyre-change banner, booking CTA
@@ -88,6 +89,7 @@ Validated with Zod. An invalid file fails the build, which gives the agent its f
 
 - **Core:** `business` (name, ragione sociale, P.IVA, address, geo, phone, WhatsApp, email, hours incl. seasonal closures, socials), `category`, `subtype` (primary), `secondarySubtypes`, `theme`, `sections[]` (ordered, toggleable), `seo`, `status` (`spec` | `live`), `previewExpires`
 - **Extension block** per category: `automotive`, `foodBeverage`, `fitness`, `trades`, plus optional `retail`
+  - `foodBeverage`: `cuisine` (e.g. "Napoletana"), `specialities` (dishes a source names, optional description), `services`, `menu.url`, `booking` (url and/or phone). Food & Beverage has no generic services: an unsourced list stays empty.
 - **`sources`:** keyed by fact path (`business.<key>`, `<extension>.<key>`): URLs + retrieval date + `confidence` (`low | medium | high | verified`; `verified` = confirmed by the client and may have no URL). Every present fact needs a source, and every source must match a fact. Service lists made only of generic services are exempt.
 - **Generic services** must be names from the registry's `genericServices` for the site's sub-types.
 - **JSON-LD** `LocalBusiness` with the correct subtype is generated from it.

@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { defaultSections, SUBTYPES, type SectionId } from '../registry.ts';
-import { parseSite, type Site } from '../schema/site.ts';
+import { parseSite, siteBooking, siteServices, type Site } from '../schema/site.ts';
 import { siteImages, type SiteImages } from './images.ts';
 import { resolveTheme, type Theme, type Variants } from './theme.ts';
 
@@ -36,7 +36,7 @@ export function loadSite(): SiteContext {
   const { site } = result;
 
   const images = siteImages(site);
-  const services = site.automotive?.services ?? [];
+  const services = siteServices(site);
   const requested = site.sections ?? defaultSections(site.subtype);
   const theme = resolveTheme(slug, site);
   const sections = requested.filter((id) => hasContent(id, site, { gallery: images.gallery.length, services: services.length }));
@@ -75,7 +75,11 @@ function hasContent(id: SectionId, site: Site, counts: { gallery: number; servic
     case 'brands':
       return Boolean(site.automotive?.brands?.length);
     case 'booking':
-      return Boolean(site.automotive?.booking);
+      return Boolean(siteBooking(site));
+    case 'products':
+      return Boolean(site.foodBeverage?.specialities?.length || site.foodBeverage?.cuisine?.length);
+    case 'menu':
+      return Boolean(site.foodBeverage?.menu);
     case 'seasonal-banner':
       return Boolean(site.business.phone || site.business.whatsapp);
     case 'retail-categories':
@@ -83,7 +87,7 @@ function hasContent(id: SectionId, site: Site, counts: { gallery: number; servic
     case 'retail-brands':
       return Boolean(site.retail?.brands?.length);
     default:
-      // Category sections whose components are not built yet (food-beverage, fitness, trades).
+      // Category sections whose components are not built yet (fitness, trades).
       return false;
   }
 }

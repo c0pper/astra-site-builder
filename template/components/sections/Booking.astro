@@ -2,16 +2,19 @@
 import Section from '../Section.astro';
 import { telHref } from '../../lib/format';
 import { loadSite } from '../../lib/site';
+import { siteBooking } from '../../schema/site';
 
 const { site } = loadSite();
-const booking = site.automotive!.booking!;
+const booking = siteBooking(site)!;
+// A restaurant books a table; a workshop books an appointment.
+const heading = site.category === 'food-beverage' ? 'Prenota un tavolo' : 'Prenota un appuntamento';
 const phone = booking.phone ?? site.business.phone;
 ---
 
 <Section id="prenota">
   <div class="flex flex-col items-start gap-6 rounded-2xl bg-primary p-8 text-on-primary sm:flex-row sm:items-center sm:justify-between sm:p-10">
     <div>
-      <h2 class="text-3xl font-bold">Prenota un appuntamento</h2>
+      <h2 class="text-3xl font-bold">{heading}</h2>
       <p class="mt-2">Scegli il momento che preferisci.</p>
     </div>
     <div class="flex flex-wrap gap-3">

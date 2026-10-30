@@ -1,0 +1,19 @@
+---
+// Food & Beverage `menu` section: links out to the business's own published menu instead of copying it,
+// so dishes and prices never go stale on our side.
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const menu = site.foodBeverage!.menu!;
+---
+
+<Section id="menu">
+  <div class="flex flex-col items-start gap-6 rounded-2xl border border-text/10 bg-surface p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+    <div>
+      <h2 class="text-3xl font-bold text-ink">Il menu</h2>
+      <p class="mt-2 text-muted">Piatti e prezzi sul menu di {site.business.name}.</p>
+    </div>
+    <a href={menu.url} class="btn bg-primary text-on-primary hover:opacity-90" rel="noopener">Consulta il menu</a>
+  </div>
+</Section>

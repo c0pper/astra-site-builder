@@ -51,7 +51,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
   },
   'food-beverage': {
     label: 'Food & Beverage',
-    defaultSections: ['hero', 'products', 'menu', 'about', 'reviews', 'gallery', 'hours', 'contact', 'map'],
+    defaultSections: ['hero', 'products', 'menu', 'services', 'booking', 'about', 'reviews', 'gallery', 'hours', 'contact', 'map'],
     allowsGenericServices: false,
   },
   fitness: {
@@ -73,6 +73,7 @@ export const SUBTYPE_IDS = [
   'auto-electrician',
   'bakery',
   'pastry-shop',
+  'restaurant',
   'gym',
   'plumber',
   'electrician',
@@ -123,6 +124,7 @@ export const SUBTYPES: Record<SubtypeId, Subtype> = {
   },
   bakery: { category: 'food-beverage', schemaType: 'Bakery', label: 'Panificio' },
   'pastry-shop': { category: 'food-beverage', schemaType: 'Bakery', label: 'Pasticceria' },
+  restaurant: { category: 'food-beverage', schemaType: 'Restaurant', label: 'Ristorante' },
   gym: { category: 'fitness', schemaType: 'ExerciseGym', label: 'Palestra' },
   plumber: {
     category: 'trades',

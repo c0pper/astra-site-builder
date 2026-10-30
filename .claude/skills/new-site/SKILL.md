@@ -37,6 +37,7 @@ Fill `business.*` and the category extension (`automotive.*`), each fact with it
 - Directories: paginegialle.it (its pages also carry the P.IVA), altraopinione.org, Google snippets in search results.
 - `legalName` and `vatNumber`: once a P.IVA turns up anywhere, confirm it with VIES (`https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/<piva>`, JSON with the registered name and address). VIES lists only businesses registered for intra-EU trade, so `isValid: false` is no evidence either way: keep the P.IVA at the confidence its other sources give. atoka.io and reportaziende.it company pages also work; ufficiocamerale.it and kompass block fetches.
 - `automotive.brands` and services: tyre and parts brand dealer locators (Pirelli, Metzeler, Michelin, …).
+- Food & Beverage (`foodBeverage.*`): the own menu page and social pages; food press (Gambero Rosso, Scatti di Gusto, local papers) for cuisine and named dishes. `specialities` are dishes a source names (a dish praised only in reviews is `low`, said so in the note). `menu.url` is a menu the business publishes itself, never a third-party copy. F&B has no generic services: with none sourced, `services` stays out.
 
 **Confidence:**
 - `high`: the business states it itself (own site, own social page), or two independent sources agree.

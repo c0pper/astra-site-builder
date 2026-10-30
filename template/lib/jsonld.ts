@@ -48,6 +48,8 @@ export function localBusinessJsonLd(site: Site, url?: string): Record<string, un
     geo: b.geo && !b.geo.approximate ? { '@type': 'GeoCoordinates', latitude: b.geo.lat, longitude: b.geo.lng } : undefined,
     openingHoursSpecification: openingHoursSpecification?.length ? openingHoursSpecification : undefined,
     sameAs: sameAs.length ? sameAs : undefined,
+    servesCuisine: site.foodBeverage?.cuisine,
+    hasMenu: site.foodBeverage?.menu?.url,
   });
 }
 

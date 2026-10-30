@@ -1,0 +1,33 @@
+---
+// Food & Beverage `products` section: the cuisine and the dishes a source names.
+import Section from '../Section.astro';
+import { loadSite } from '../../lib/site';
+
+const { site } = loadSite();
+const cuisine = site.foodBeverage?.cuisine ?? [];
+const specialities = site.foodBeverage?.specialities ?? [];
+---
+
+<Section id="specialita" title={specialities.length ? 'Specialità' : 'La cucina'}>
+  {
+    cuisine.length > 0 && (
+      <ul class="mb-8 flex flex-wrap gap-3" aria-label="Cucina">
+        {cuisine.map((c) => (
+          <li class="rounded-full border border-text/15 bg-surface px-5 py-2 font-semibold">Cucina {c.toLowerCase()}</li>
+        ))}
+      </ul>
+    )
+  }
+  {
+    specialities.length > 0 && (
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {specialities.map((s) => (
+          <li class="rounded-xl border border-text/10 bg-surface p-6">
+            <h3 class="font-heading text-xl font-semibold text-ink">{s.name}</h3>
+            {s.description && <p class="mt-2 text-muted">{s.description}</p>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Section>

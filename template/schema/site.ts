@@ -69,8 +69,17 @@ const extensions = {
     brands: z.array(z.string().min(1)).optional(),
     booking: z.strictObject({ url: z.url().optional(), phone: phone.optional() }).optional(),
   }),
+  foodBeverage: z.strictObject({
+    /** Cuisine styles as a source names them, e.g. "Napoletana". */
+    cuisine: z.array(z.string().min(1)).optional(),
+    /** Dishes or products a source names. */
+    specialities: z.array(z.strictObject({ name: z.string().min(1), description: z.string().optional() })).optional(),
+    services: z.array(service).optional(),
+    /** The business's own published menu: linked, never copied, so prices stay current. */
+    menu: z.strictObject({ url: z.url() }).optional(),
+    booking: z.strictObject({ url: z.url().optional(), phone: phone.optional() }).optional(),
+  }),
   // Filled in when each category is built (PLAN "After MVP").
-  foodBeverage: z.strictObject({}),
   fitness: z.strictObject({}),
   trades: z.strictObject({}),
   retail: z.strictObject({
@@ -80,7 +89,7 @@ const extensions = {
 };
 type ExtensionKey = keyof typeof extensions;
 
-const EXTENSION_FOR_CATEGORY: Record<CategoryId, ExtensionKey> = {
+export const EXTENSION_FOR_CATEGORY: Record<CategoryId, ExtensionKey> = {
   automotive: 'automotive',
   'food-beverage': 'foodBeverage',
   fitness: 'fitness',
@@ -153,7 +162,7 @@ export const siteSchema = z
     }
 
     // Generic services: allowed only where the category permits, and only from the registry list.
-    const services = site.automotive?.services ?? [];
+    const services = siteServices(site);
     const allowedGeneric = new Set(
       [site.subtype, ...site.secondarySubtypes].flatMap((id) => SUBTYPES[id].genericServices ?? []),
     );
@@ -202,6 +211,18 @@ export const siteSchema = z
   });
 
 export type Site = z.output<typeof siteSchema>;
+
+/** The service list of the site's own category extension. */
+export function siteServices(site: Pick<Site, 'category' | 'automotive' | 'foodBeverage'>) {
+  const ext = EXTENSION_FOR_CATEGORY[site.category];
+  return (ext === 'automotive' || ext === 'foodBeverage' ? site[ext]?.services : undefined) ?? [];
+}
+
+/** The booking CTA of the site's own category extension. */
+export function siteBooking(site: Pick<Site, 'category' | 'automotive' | 'foodBeverage'>) {
+  const ext = EXTENSION_FOR_CATEGORY[site.category];
+  return ext === 'automotive' || ext === 'foodBeverage' ? site[ext]?.booking : undefined;
+}
 
 export type ParseResult = { ok: true; site: Site } | { ok: false; error: string };
 
