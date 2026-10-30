@@ -13,6 +13,12 @@
       "wed": [{ "open": "12:30", "close": "15:00" }, { "open": "19:30", "close": "23:00" }],
       "mon": []
     },
+    "socials": {
+      "facebook": "https://www.facebook.com/trattoria.esempio",
+      "instagram": "https://www.instagram.com/trattoriaesempio",
+      "tripadvisor": "https://www.tripadvisor.it/Restaurant_Review-trattoria-esempio",
+      "thefork": "https://www.thefork.it/ristorante/trattoria-esempio"
+    },
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Trattoria+Esempio",
     "rating": { "value": 4.5, "count": 900, "url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Esempio" }
   },
@@ -37,6 +43,7 @@
     "business.geo": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
     "business.phone": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
     "business.hours": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" },
+    "business.socials": { "urls": ["https://www.facebook.com/trattoria.esempio"], "retrieved": "2026-10-30", "confidence": "high" },
     "business.googleMapsUrl": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
     "business.rating": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "high" },
     "foodBeverage.cuisine": { "urls": ["https://example.com/maps-listing"], "retrieved": "2026-10-30", "confidence": "medium" },

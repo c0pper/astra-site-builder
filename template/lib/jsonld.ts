@@ -2,6 +2,7 @@
 // Ratings are left out on purpose: Google treats LocalBusiness ratings shown on the business's own site as self-serving.
 import { SUBTYPES } from '../registry.ts';
 import type { Site } from '../schema/site.ts';
+import { profileLinks } from './profiles.ts';
 
 const DAY_NAMES = {
   mon: 'Monday',
@@ -15,7 +16,7 @@ const DAY_NAMES = {
 
 export function localBusinessJsonLd(site: Site, url?: string): Record<string, unknown> {
   const { business: b } = site;
-  const sameAs = [b.socials?.facebook, b.socials?.instagram, b.googleMapsUrl].filter(Boolean);
+  const sameAs = [...profileLinks(b).map((p) => p.url), b.googleMapsUrl].filter(Boolean);
 
   const openingHoursSpecification = b.hours
     ? Object.entries(b.hours).flatMap(([day, intervals]) =>

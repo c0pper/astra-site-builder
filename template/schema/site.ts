@@ -14,6 +14,47 @@ const time = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Expected HH:MM');
 const phone = z.string().regex(/^\+?[0-9 ]{6,}$/, 'Expected digits, optionally with + and spaces');
 const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'Expected #RRGGBB');
 
+/**
+ * Platforms `business.socials` accepts, with the hosts a profile URL must be on. Grouped by the categories they
+ * serve; the general ones fit any business. Footer labels and icons live in `lib/profiles.ts`.
+ */
+export const SOCIAL_HOSTS = {
+  // Any category
+  facebook: ['facebook.com'],
+  instagram: ['instagram.com'],
+  tiktok: ['tiktok.com'],
+  youtube: ['youtube.com'],
+  linkedin: ['linkedin.com'],
+  // Food & Beverage: reviews, table booking, delivery
+  tripadvisor: ['tripadvisor.it', 'tripadvisor.com'],
+  thefork: ['thefork.it', 'thefork.com'],
+  deliveroo: ['deliveroo.it'],
+  glovo: ['glovoapp.com'],
+  justeat: ['justeat.it'],
+  ubereats: ['ubereats.com'],
+  // Trades: quote marketplaces and portfolios
+  prontopro: ['prontopro.it'],
+  instapro: ['instapro.it'],
+  houzz: ['houzz.it', 'houzz.com'],
+  // Health: practitioner directories with booking
+  miodottore: ['miodottore.it'],
+  idoctors: ['idoctors.it'],
+  doctolib: ['doctolib.it'],
+} as const satisfies Record<string, readonly string[]>;
+export type SocialPlatform = keyof typeof SOCIAL_HOSTS;
+
+/** The host or any of its subdomains (`www.`, `m.`, `it-it.`). */
+export const onHost = (url: string, hosts: readonly string[]) => {
+  const { hostname } = new URL(url);
+  return hosts.some((h) => hostname === h || hostname.endsWith(`.${h}`));
+};
+
+const profileUrl = (hosts: readonly string[]) =>
+  z
+    .url()
+    .refine((u) => onHost(u, hosts), `Expected a ${hosts.join(' or ')} URL`)
+    .optional();
+
 const interval = z.strictObject({ open: time, close: time });
 /** Per weekday: list of opening intervals. Empty list = closed; missing day = unknown. */
 const hours = z.strictObject({
@@ -51,7 +92,14 @@ const business = z.strictObject({
   seasonalClosures: z
     .array(z.strictObject({ from: z.iso.date(), to: z.iso.date(), note: z.string().optional() }))
     .optional(),
-  socials: z.strictObject({ facebook: z.url().optional(), instagram: z.url().optional() }).optional(),
+  /** The business's own pages on social and review/booking platforms: linked as icons in the footer. */
+  socials: z
+    .strictObject(
+      Object.fromEntries(Object.entries(SOCIAL_HOSTS).map(([key, hosts]) => [key, profileUrl(hosts)])) as {
+        [K in SocialPlatform]: ReturnType<typeof profileUrl>;
+      },
+    )
+    .optional(),
   googleMapsUrl: z.url().optional(),
   /** A directory profile people contact the business through (MioDottore, TheFork): shown as a contact action. */
   directory: z.strictObject({ name: z.string().min(1), url: z.url() }).optional(),

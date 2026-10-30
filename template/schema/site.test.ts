@@ -40,6 +40,12 @@ describe('site.json schema', () => {
     assert.ok(parseSite(site).ok);
   });
 
+  it('rejects a profile URL on another platform', () => {
+    const site = fixture('restaurant');
+    site.business.socials.thefork = 'https://www.facebook.com/trattoria.esempio';
+    expectError(site, 'Expected a thefork.it or thefork.com URL');
+  });
+
   it('rejects a subtype from another category', () => {
     expectError({ ...fixture('empty'), subtype: 'bakery' }, 'belongs to category "food-beverage"');
   });

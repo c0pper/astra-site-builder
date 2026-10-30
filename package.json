@@ -32,6 +32,7 @@
     "astro": "^7.4.4",
     "astro-swiper": "2.11.0",
     "leaflet": "1.9.4",
+    "simple-icons": "^16.36.0",
     "swiper": "14.3.0",
     "tailwindcss": "^4.3.3",
     "zod": "^4.6.7"

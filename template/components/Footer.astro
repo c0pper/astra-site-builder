@@ -1,9 +1,11 @@
 ---
 import { formatAddress, href } from '../lib/format';
+import { profileLinks } from '../lib/profiles';
 import { loadSite } from '../lib/site';
 
 const { site } = loadSite();
 const b = site.business;
+const profiles = profileLinks(b);
 ---
 
 <footer class="bg-text text-surface/80">
@@ -14,9 +16,32 @@ const b = site.business;
       <p>{formatAddress(b.address)}</p>
       {b.vatNumber && <p>P.IVA {b.vatNumber}</p>}
     </div>
-    <nav aria-label="Informazioni legali" class="flex gap-6 sm:justify-end">
-      <a href={href('privacy/')} class="underline-offset-4 hover:underline">Privacy</a>
-      <a href={href('crediti/')} class="underline-offset-4 hover:underline">Crediti</a>
-    </nav>
+    <div class="flex flex-col gap-6 sm:items-end">
+      {
+        profiles.length > 0 && (
+          <ul aria-label="Profili online" class="-ml-2.5 flex flex-wrap gap-1 sm:-mr-2.5 sm:ml-0 sm:justify-end">
+            {profiles.map((p) => (
+              <li>
+                <a
+                  href={p.url}
+                  aria-label={p.label}
+                  title={p.label}
+                  class="flex size-11 items-center justify-center rounded-full transition-colors hover:bg-surface/10 hover:text-surface"
+                  rel="noopener"
+                >
+                  <svg viewBox="0 0 24 24" class="size-5 fill-current" aria-hidden="true">
+                    <path d={p.icon} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <nav aria-label="Informazioni legali" class="flex gap-6">
+        <a href={href('privacy/')} class="underline-offset-4 hover:underline">Privacy</a>
+        <a href={href('crediti/')} class="underline-offset-4 hover:underline">Crediti</a>
+      </nav>
+    </div>
   </div>
 </footer>
