@@ -1,5 +1,6 @@
 ---
-// No third-party request until the visitor asks for the map (cookieless by design).
+// No third-party request until the visitor asks for the map (cookieless by design):
+// Leaflet and its tiles load only on click.
 import Section from '../Section.astro';
 import { directionsHref, formatAddress } from '../../lib/format';
 import { loadSite } from '../../lib/site';
@@ -7,21 +8,25 @@ import { loadSite } from '../../lib/site';
 const { site } = loadSite();
 const b = site.business;
 const geo = b.geo;
-// A street-level pin can sit a few hundred metres off: show more of the area around it.
-const d = geo?.approximate ? 0.008 : 0.004;
-const osmSrc = geo
-  ? `https://www.openstreetmap.org/export/embed.html?bbox=${geo.lng - d},${geo.lat - d},${geo.lng + d},${geo.lat + d}&layer=mapnik&marker=${geo.lat},${geo.lng}`
-  : undefined;
+const address = formatAddress(b.address);
 ---
 
 <Section id="dove-siamo" title="Dove siamo">
-  <p class="text-lg">{formatAddress(b.address)}</p>
+  <p class="text-lg">{address}</p>
   <a href={directionsHref(b)} class="btn mt-4 bg-primary text-on-primary hover:opacity-90" rel="noopener">
     Ottieni indicazioni
   </a>
   {
-    osmSrc && (
-      <div class="mt-8 overflow-hidden rounded-2xl border border-text/10" data-map={osmSrc}>
+    geo && (
+      <div
+        class="map-box mt-8 overflow-hidden rounded-2xl border border-text/10"
+        data-map
+        data-lat={geo.lat}
+        data-lng={geo.lng}
+        data-approximate={geo.approximate ? '' : undefined}
+        data-name={b.name}
+        data-address={address}
+      >
         <div class="flex aspect-[16/9] flex-col items-center justify-center gap-3 bg-surface-alt p-6 text-center sm:aspect-[21/9]">
           <button type="button" class="btn border border-ink/30 text-ink hover:bg-surface" data-map-load>
             Mostra la mappa
@@ -39,14 +44,77 @@ const osmSrc = geo
 </Section>
 
 <script>
+  // `?url`, not a CSS import: Astro would hoist an imported stylesheet into every page's <head>.
+  import leafletCss from 'leaflet/dist/leaflet.css?url';
+
+  function loadCss(href: string) {
+    return new Promise((resolve, reject) => {
+      const link = Object.assign(document.createElement('link'), { rel: 'stylesheet', href, onload: resolve, onerror: reject });
+      document.head.append(link);
+    });
+  }
+
   document.querySelectorAll<HTMLElement>('[data-map]').forEach((box) => {
-    box.querySelector('[data-map-load]')?.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = box.dataset.map!;
-      iframe.title = 'Mappa';
-      iframe.loading = 'lazy';
-      iframe.className = 'block aspect-[16/9] w-full sm:aspect-[21/9]';
-      box.replaceChildren(iframe);
+    const button = box.querySelector<HTMLButtonElement>('[data-map-load]');
+    button?.addEventListener('click', async () => {
+      button.disabled = true;
+      const [{ default: L }] = await Promise.all([import('leaflet'), loadCss(leafletCss)]);
+      const { lat, lng, name, address } = box.dataset;
+      const at: [number, number] = [Number(lat), Number(lng)];
+      const approximate = 'approximate' in box.dataset;
+
+      const el = document.createElement('div');
+      el.className = 'block aspect-[16/9] w-full sm:aspect-[21/9]';
+      el.setAttribute('aria-label', `Mappa: ${name}, ${address}`);
+      box.replaceChildren(el);
+
+      // A street-level pin can sit a few hundred metres off: show more of the area around it.
+      const map = L.map(el, { scrollWheelZoom: false }).setView(at, approximate ? 15 : 17);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+
+      const popup = document.createElement('div');
+      popup.append(Object.assign(document.createElement('strong'), { textContent: name }), document.createElement('br'), address!);
+
+      if (approximate) {
+        // An area, not a pin: the exact spot is unknown.
+        L.circle(at, { radius: 200, className: 'map-area' }).addTo(map).bindPopup(popup);
+      } else {
+        // A square with one sharp corner, turned 45°: the tip lands 14√2 px below the centre.
+        // Drawn on an inner span: Leaflet owns the marker element's transform and transform-origin.
+        const icon = L.divIcon({ className: 'map-pin', html: '<span></span>', iconSize: [28, 28], iconAnchor: [14, 34], popupAnchor: [0, -34] });
+        L.marker(at, { icon, alt: name, title: name }).addTo(map).bindPopup(popup).openPopup();
+      }
     });
   });
 </script>
+
+<style is:global>
+  /* Leaflet builds its markup at runtime, outside this component's style scope. */
+  .map-box .leaflet-container {
+    font: inherit;
+  }
+  .map-box .map-pin span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: var(--primary);
+    border: 3px solid var(--on-primary);
+    border-radius: 50% 50% 50% 0;
+    rotate: -45deg;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.35);
+  }
+  .map-box .map-area {
+    stroke: var(--primary);
+    fill: var(--primary);
+    fill-opacity: 0.2;
+  }
+  .map-box .leaflet-popup-content-wrapper,
+  .map-box .leaflet-popup-tip {
+    background: var(--surface);
+    color: var(--text);
+  }
+</style>

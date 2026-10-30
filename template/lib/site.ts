@@ -3,7 +3,7 @@ import path from 'node:path';
 import { defaultSections, SUBTYPES, type SectionId } from '../registry.ts';
 import { parseSite, type Site } from '../schema/site.ts';
 import { siteImages, type SiteImages } from './images.ts';
-import { resolveTheme, type Theme } from './theme.ts';
+import { resolveTheme, type Theme, type Variants } from './theme.ts';
 
 export interface SiteContext {
   slug: string;
@@ -12,6 +12,10 @@ export interface SiteContext {
   /** Sections to render, in order, already filtered to those with data. */
   sections: SectionId[];
   images: SiteImages;
+  /** Hero layout actually rendered: photo layouts fall back to `centered` when the pack has no hero photo. */
+  heroLayout: Variants['hero'];
+  /** The home page opens on a full-bleed hero (photo or primary colour) that the transparent header sits on. */
+  heroUnderHeader: boolean;
   /** Visitor-facing sub-type label, e.g. "Gommista". */
   label: string;
   /** The service list of the site's category extension, if any. */
@@ -34,13 +38,18 @@ export function loadSite(): SiteContext {
   const images = siteImages(site);
   const services = site.automotive?.services ?? [];
   const requested = site.sections ?? defaultSections(site.subtype);
+  const theme = resolveTheme(slug, site);
+  const sections = requested.filter((id) => hasContent(id, site, { gallery: images.gallery.length, services: services.length }));
+  const heroLayout = images.hero ? theme.variants.hero : 'centered';
 
   cached = {
     slug,
     site,
-    theme: resolveTheme(slug, site),
-    sections: requested.filter((id) => hasContent(id, site, { gallery: images.gallery.length, services: services.length })),
+    theme,
+    sections,
     images,
+    heroLayout,
+    heroUnderHeader: sections[0] === 'hero' && heroLayout !== 'split',
     label: SUBTYPES[site.subtype].label,
     services,
   };

@@ -11,9 +11,11 @@ interface Props {
   description?: string;
   /** JSON-LD object for this page, if any. */
   jsonLd?: Record<string, unknown>;
+  /** The page opens on a full-bleed hero that the header sits on (home page only). */
+  overHero?: boolean;
 }
 
-const { title, description, jsonLd } = Astro.props;
+const { title, description, jsonLd, overHero } = Astro.props;
 const { site, theme } = loadSite();
 const isSpec = site.status === 'spec';
 const initial = site.business.name.trim().charAt(0).toUpperCase();
@@ -35,7 +37,7 @@ const favicon = `data:image/svg+xml,${encodeURIComponent(
   </head>
   <body class="pb-16 md:pb-0">
     {isSpec && <DemoBanner />}
-    <Header />
+    <Header overHero={overHero} />
     <main>
       <slot />
     </main>

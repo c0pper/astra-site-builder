@@ -21,9 +21,63 @@
   --font-sans: var(--font-body);
 }
 
+/* One-shot animations. Always use them behind `motion-safe:`, so reduced-motion visitors get a still page. */
+@theme {
+  /* Slow zoom on hero photos. */
+  --animate-hero-zoom: hero-zoom 20s ease-out both;
+  /* Two soft beats on the mobile call button, a few seconds after load. */
+  --animate-nudge: nudge 0.6s ease-in-out 3s 2;
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  @keyframes nudge {
+    50% {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* Cross-page fade between the home page and Crediti / Privacy. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+/* Slide-up as the element scrolls into view. CSS scroll-driven animation, no JS: browsers without
+   support (and reduced-motion visitors) just show the content, so nothing is ever hidden.
+   No opacity on purpose: a section caught mid-fade at the fold fails the contrast gate, and the
+   tightest palettes stay at 4.5:1 only above ~0.97 opacity. */
+@keyframes reveal {
+  from {
+    translate: 0 1.5rem;
+  }
+}
+@utility reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      /* Longhands on purpose: the minifier folds a shorthand + `animation-timeline` into one
+         `animation: … view()`, which Chrome rejects. */
+      animation-name: reveal;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
 @layer base {
   html {
-    scroll-behavior: smooth;
+    @apply motion-safe:scroll-smooth;
+    /* Anchor jumps land below the sticky header (h-16). */
+    scroll-padding-top: 4rem;
   }
   body {
     @apply bg-surface text-text font-sans antialiased;
@@ -44,5 +98,5 @@
 }
 
 @utility btn {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-semibold transition hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0;
 }

@@ -27,7 +27,7 @@ const actions = [
         ]}
         rel={a.href.startsWith('http') ? 'noopener' : undefined}
       >
-        {a.label}
+        <span class:list={['inline-block', i === 0 && 'motion-safe:animate-nudge']}>{a.label}</span>
       </a>
     ))
   }

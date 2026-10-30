@@ -1,23 +1,68 @@
 ---
+// Sticky header. Over a full-bleed hero it starts transparent (the hero slides under it, see Hero.astro)
+// and turns solid with a shadow once the page scrolls. Fixed height, so the switch never moves the layout.
 import { href, telHref } from '../lib/format';
 import { loadSite } from '../lib/site';
 
-const { site, label } = loadSite();
+interface Props {
+  /** Set by the home page when its hero sits under the header. */
+  overHero?: boolean;
+}
+const { overHero = false } = Astro.props;
+const { site, label, heroLayout } = loadSite();
 const { name, phone } = site.business;
 ---
 
-<header class="border-b border-text/10 bg-surface">
-  <div class="container-page flex items-center justify-between gap-4 py-3">
+<header
+  data-header
+  data-over-hero={overHero ? heroLayout : undefined}
+  class="sticky top-0 z-30 border-b border-text/10 bg-surface duration-300 data-scrolled:shadow-md motion-safe:transition-[background-color,border-color,box-shadow]"
+>
+  <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href={href()} class="min-w-0 leading-tight">
-      <span class="block truncate font-heading text-xl font-bold text-ink sm:text-2xl">{name}</span>
-      <span class="block text-xs tracking-wide text-muted uppercase">{label} · {site.business.address.city}</span>
+      <span data-name class="block truncate font-heading text-xl font-bold text-ink sm:text-2xl">{name}</span>
+      <span data-label class="block text-xs tracking-wide text-muted uppercase">{label} · {site.business.address.city}</span>
     </a>
     {
       phone && (
-        <a href={telHref(phone)} class="btn hidden shrink-0 bg-primary text-on-primary hover:opacity-90 sm:inline-flex">
+        <a href={telHref(phone)} data-call class="btn hidden shrink-0 bg-primary text-on-primary hover:opacity-90 sm:inline-flex">
           Chiama {phone}
         </a>
       )
     }
   </div>
 </header>
+
+<style>
+  /* Transparent state: only at the top of a page whose hero sits underneath. */
+  header[data-over-hero]:not([data-scrolled]) {
+    background-color: transparent;
+    border-color: transparent;
+    --header-fg: #ffffff;
+  }
+  header[data-over-hero='centered']:not([data-scrolled]) {
+    --header-fg: var(--on-primary);
+  }
+  header[data-over-hero]:not([data-scrolled]) [data-name],
+  header[data-over-hero]:not([data-scrolled]) [data-label] {
+    color: var(--header-fg);
+  }
+  /* The primary button would vanish on a primary-coloured hero. */
+  header[data-over-hero]:not([data-scrolled]) [data-call] {
+    background-color: var(--accent);
+    color: var(--on-accent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    [data-name],
+    [data-label] {
+      transition: color 300ms;
+    }
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const update = () => header.toggleAttribute('data-scrolled', window.scrollY > 8);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+</script>

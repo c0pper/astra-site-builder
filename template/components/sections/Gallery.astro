@@ -1,13 +1,14 @@
 ---
 // Client photos, or on spec sites a stock gallery that is visibly labelled as illustrative:
 // unlabelled stock would imply "this is our place/our work".
+// Main slider linked to a thumbnail strip (astro-swiper). No autoplay: moving content without a pause control fails WCAG 2.2.2.
 import { Picture } from 'astro:assets';
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from 'astro-swiper';
 import Section from '../Section.astro';
 import { loadSite } from '../../lib/site';
 
-const { images, theme } = loadSite();
+const { images } = loadSite();
 const { gallery, galleryIllustrative } = images;
-const strip = theme.variants.gallery === 'strip';
 ---
 
 <Section
@@ -15,24 +16,107 @@ const strip = theme.variants.gallery === 'strip';
   title="Galleria"
   intro={galleryIllustrative ? 'Immagini illustrative.' : undefined}
 >
-  <ul
-    class:list={[
-      strip ? 'flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4' : 'grid grid-cols-2 gap-3 md:grid-cols-3',
-    ]}
-  >
-    {
-      gallery.map((img) => (
-        <li class:list={[strip && 'w-72 shrink-0 snap-start sm:w-96']}>
-          <Picture
-            src={img.src}
-            alt={img.alt}
-            formats={['avif', 'webp']}
-            widths={[400, 800]}
-            sizes={strip ? '384px' : '(min-width: 768px) 33vw, 50vw'}
-            class="aspect-square w-full rounded-xl object-cover"
-          />
-        </li>
-      ))
-    }
-  </ul>
+  <div class="gallery">
+    <Swiper
+      class="gallery-main"
+      options={{
+        spaceBetween: 12,
+        keyboard: { enabled: true, onlyInViewport: true },
+        navigation: { prevEl: '.gallery-prev', nextEl: '.gallery-next' },
+        a11y: {
+          prevSlideMessage: 'Foto precedente',
+          nextSlideMessage: 'Foto successiva',
+          firstSlideMessage: 'Questa è la prima foto',
+          lastSlideMessage: "Questa è l'ultima foto",
+          slideLabelMessage: '{{index}} di {{slidesLength}}',
+          containerRoleDescriptionMessage: 'galleria',
+          itemRoleDescriptionMessage: 'foto',
+        },
+        astro: { thumbSwiperUniqueSelector: '.gallery-thumbs' },
+      }}
+    >
+      <SwiperWrapper>
+        {
+          gallery.map((img) => (
+            <SwiperSlide class="overflow-hidden rounded-xl">
+              <Picture
+                src={img.src}
+                alt={img.alt}
+                formats={['avif', 'webp']}
+                widths={[400, 800, 1200]}
+                sizes="(min-width: 1152px) 1104px, 100vw"
+                class="aspect-[4/3] w-full object-cover transition-transform duration-700 sm:aspect-[16/9] motion-safe:hover:scale-[1.03]"
+              />
+            </SwiperSlide>
+          ))
+        }
+      </SwiperWrapper>
+      <SwiperButtonPrev class="gallery-prev" />
+      <SwiperButtonNext class="gallery-next" />
+    </Swiper>
+
+    <Swiper
+      class="gallery-thumbs mt-3"
+      options={{
+        spaceBetween: 8,
+        slidesPerView: 4,
+        breakpoints: { 640: { slidesPerView: 6, spaceBetween: 12 } },
+        freeMode: true,
+        watchSlidesProgress: true,
+        a11y: { enabled: false },
+      }}
+    >
+      <SwiperWrapper>
+        {
+          gallery.map((img) => (
+            <SwiperSlide>
+              <Picture
+                src={img.src}
+                alt=""
+                formats={['avif', 'webp']}
+                widths={[200, 400]}
+                sizes="(min-width: 640px) 180px, 25vw"
+                class="aspect-square w-full rounded-lg object-cover"
+              />
+            </SwiperSlide>
+          ))
+        }
+      </SwiperWrapper>
+    </Swiper>
+  </div>
 </Section>
+
+<style is:global>
+  /* Swiper's own markup is rendered by astro-swiper, outside this component's style scope. */
+  .gallery {
+    --swiper-theme-color: var(--primary);
+    --swiper-navigation-color: var(--on-primary);
+    --swiper-navigation-size: 2.75rem;
+    --swiper-navigation-sides-offset: 0.75rem;
+  }
+
+  .gallery .gallery-prev,
+  .gallery .gallery-next {
+    border-radius: 9999px;
+    background: var(--primary);
+  }
+
+  .gallery .swiper-navigation-icon {
+    width: 0.75rem;
+    height: 1.125rem;
+  }
+
+  .gallery-thumbs .swiper-slide {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 150ms;
+  }
+
+  .gallery-thumbs .swiper-slide:hover {
+    opacity: 0.8;
+  }
+
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+</style>

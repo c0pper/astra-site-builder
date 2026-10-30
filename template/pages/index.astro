@@ -34,13 +34,13 @@ const COMPONENTS: Partial<Record<SectionId, (props: Record<string, never>) => un
   'retail-brands': RetailBrands,
 };
 
-const { site, sections, label } = loadSite();
+const { site, sections, label, heroUnderHeader } = loadSite();
 const b = site.business;
 const title = site.seo.title ?? `${b.name} – ${label} a ${b.address.city}`;
 const description = site.seo.description ?? site.copy.tagline;
 ---
 
-<Base title={title} description={description} jsonLd={localBusinessJsonLd(site)}>
+<Base title={title} description={description} jsonLd={localBusinessJsonLd(site)} overHero={heroUnderHeader}>
   {
     sections.map((id) => {
       const Component = COMPONENTS[id];

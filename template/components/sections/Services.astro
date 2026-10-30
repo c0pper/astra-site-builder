@@ -15,7 +15,7 @@ const intro = services.some((s) => s.generic)
     variant === 'grid' ? (
       <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
-          <li class="rounded-xl border border-text/10 bg-surface p-6">
+          <li class="rounded-xl border border-text/10 bg-surface p-6 transition duration-300 hover:border-ink/30 hover:shadow-lg motion-safe:hover:-translate-y-1">
             <h3 class="text-xl font-semibold text-ink">{s.name}</h3>
             {s.description && <p class="mt-2 text-muted">{s.description}</p>}
           </li>

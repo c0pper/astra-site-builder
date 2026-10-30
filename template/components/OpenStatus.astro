@@ -1,0 +1,46 @@
+---
+// Live "Aperto ora · chiude alle 19:00" pill, computed in the browser from the sourced hours.
+// Rendered invisible at its final size so filling it in never shifts the layout; stays invisible if today's hours are unknown.
+import { loadSite } from '../lib/site';
+
+interface Props {
+  /** `onDark` for use over images or the primary colour. */
+  tone?: 'default' | 'onDark';
+  class?: string;
+}
+const { tone = 'default', class: className } = Astro.props;
+const { hours, seasonalClosures = [] } = loadSite().site.business;
+---
+
+{
+  hours && (
+    <p
+      data-open-status={JSON.stringify({ hours, closures: seasonalClosures })}
+      class:list={[
+        'group invisible inline-flex h-8 items-center gap-2 rounded-full border px-3 text-sm font-semibold',
+        tone === 'onDark' ? 'border-current/30 bg-current/10' : 'border-text/15 bg-surface',
+        className,
+      ]}
+    >
+      <span
+        aria-hidden="true"
+        class="size-2.5 rounded-full bg-current opacity-50 group-data-open:bg-[#22c55e] group-data-open:opacity-100"
+      />
+      <span data-text />
+    </p>
+  )
+}
+
+<script>
+  import { openStatus, romeNow } from '../lib/hours';
+
+  const now = romeNow();
+  document.querySelectorAll<HTMLElement>('[data-open-status]').forEach((el) => {
+    const { hours, closures } = JSON.parse(el.dataset.openStatus ?? '{}');
+    const status = openStatus(hours, closures, now);
+    if (!status) return;
+    el.querySelector('[data-text]')!.textContent = status.text;
+    el.toggleAttribute('data-open', status.open);
+    el.classList.remove('invisible');
+  });
+</script>

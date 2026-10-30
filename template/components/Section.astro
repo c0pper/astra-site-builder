@@ -13,12 +13,14 @@ const { id, title, intro } = Astro.props;
   <div class="container-page">
     {
       title && (
-        <div class="mb-8 max-w-2xl">
+        <div class="reveal mb-8 max-w-2xl">
           <h2 class="text-3xl font-bold text-ink sm:text-4xl">{title}</h2>
           {intro && <p class="mt-3 text-lg text-muted">{intro}</p>}
         </div>
       )
     }
-    <slot />
+    <div class="reveal">
+      <slot />
+    </div>
   </div>
 </section>

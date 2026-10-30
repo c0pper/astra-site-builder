@@ -24,7 +24,6 @@ export interface FontPairing {
 export const VARIANTS = {
   hero: ['split', 'overlay', 'centered'],
   services: ['grid', 'list'],
-  gallery: ['grid', 'strip'],
 } as const;
 export type VariantSection = keyof typeof VARIANTS;
 export type Variants = { [K in VariantSection]: (typeof VARIANTS)[K][number] };

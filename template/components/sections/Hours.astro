@@ -1,4 +1,5 @@
 ---
+import OpenStatus from '../OpenStatus.astro';
 import Section from '../Section.astro';
 import { DAYS, formatDate, telHref } from '../../lib/format';
 import { loadSite } from '../../lib/site';
@@ -9,6 +10,7 @@ const known = hours ? DAYS.filter(([key]) => hours[key] !== undefined) : [];
 ---
 
 <Section id="orari" title="Orari">
+  {known.length > 0 && <OpenStatus class="mb-6" />}
   {
     known.length ? (
       <table class="w-full max-w-lg text-lg">

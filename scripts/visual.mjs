@@ -47,10 +47,10 @@ export async function runVisual(slug, { update = false } = {}) {
         }
         window.scrollTo(0, 0);
         await document.fonts.ready;
-        // Fixed elements (the mobile action bar) land at a scroll-dependent spot in full-page captures;
-        // render them in normal flow so the capture is deterministic.
+        // Fixed and sticky elements (the mobile action bar, the header) land at a scroll-dependent spot in
+        // full-page captures; render them in normal flow so the capture is deterministic.
         for (const el of document.querySelectorAll('body *')) {
-          if (getComputedStyle(el).position === 'fixed') el.style.position = 'static';
+          if (['fixed', 'sticky'].includes(getComputedStyle(el).position)) el.style.position = 'static';
         }
       });
       await page.waitForLoadState('networkidle');
