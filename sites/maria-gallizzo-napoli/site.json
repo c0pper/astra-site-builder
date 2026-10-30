@@ -1,0 +1,168 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "health",
+  "subtype": "psychologist",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Dott.ssa Maria Gallizzo",
+    "address": {
+      "street": "Via Foria, 228",
+      "postalCode": "80139",
+      "city": "Napoli",
+      "province": "NA"
+    },
+    "directory": {
+      "name": "MioDottore",
+      "url": "https://www.miodottore.it/profilo/maria-gallizzo"
+    },
+    "geo": {
+      "lat": 40.8601151,
+      "lng": 14.2633257
+    }
+  },
+  "copy": {
+    "voice": "i",
+    "headline": "Psicologa e psicoterapeuta a Napoli",
+    "tagline": "Psicoterapia sistemico relazionale per individui, coppie e famiglie, in via Foria.",
+    "about": "Sono Maria Gallizzo, psicologa e psicoterapeuta a indirizzo sistemico relazionale. Lavoro con individui, coppie e famiglie che si trovano in difficoltà.\n\nDa diversi anni lavoro con i giovani adulti, grazie alla collaborazione con centri universitari. Mi occupo anche di psicologia scolastica.\n\nRicevo nello studio di via Foria 228, a Napoli, e online. Posso tenere i colloqui anche in inglese o in spagnolo."
+  },
+  "health": {
+    "title": "Psicologa psicoterapeuta",
+    "registration": {
+      "board": "Ordine degli Psicologi della Campania"
+    },
+    "specializations": [
+      "Psicoterapia sistemico relazionale",
+      "Psicologia scolastica"
+    ],
+    "areas": [
+      "Ansia",
+      "Attacchi di panico",
+      "Stress",
+      "Sindrome da burnout",
+      "Depressione",
+      "Bassa autostima",
+      "Paure",
+      "Insonnia",
+      "Crisi relazionali",
+      "Dipendenza affettiva",
+      "Disturbi alimentari",
+      "Bulimia",
+      "Disturbi psicosomatici",
+      "Problemi comportamentali",
+      "Narcisismo",
+      "Psiconevrosi"
+    ],
+    "services": [
+      {
+        "name": "Colloquio psicologico individuale"
+      },
+      {
+        "name": "Colloquio psicologico di coppia"
+      },
+      {
+        "name": "Psicoterapia individuale"
+      },
+      {
+        "name": "Psicoterapia familiare"
+      },
+      {
+        "name": "Sostegno psicologico adolescenti"
+      },
+      {
+        "name": "Sostegno alla genitorialità"
+      },
+      {
+        "name": "Colloqui e psicoterapia online"
+      }
+    ],
+    "languages": [
+      "Inglese",
+      "Spagnolo"
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo",
+        "https://areariservata.psy.it/albonazionale/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "MioDottore: \"Dott.ssa Maria Gallizzo\". National Albo (CNOP): GALLIZZO MARIA, the only Gallizzo registered in Italy."
+    },
+    "business.address": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "MioDottore only: \"Studio di Psicoterapia, Via Foria 228, Napoli 80139\". No other source found."
+    },
+    "business.directory": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "The profile hides the phone behind a \"Mostra contatti\" button; it states that online booking is not offered at this address."
+    },
+    "health.title": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "MioDottore: \"psicoterapeuta, psicologa\"; \"Sono una terapeuta sistemico relazionale\". Psicoterapeuta is a protected title (Albo annotation): the Albo search result does not show annotations, so it is not confirmed there."
+    },
+    "health.registration": {
+      "urls": [
+        "https://areariservata.psy.it/albonazionale/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "National Albo search by surname (POST https://areariservata.psy.it/open-api/albo-nazionale/cerca, cognome \"gallizzo\"): GALLIZZO MARIA, Ordine Campania, sezione A, stato A (active), updated 2026-01-19. The registration number is not in the search result."
+    },
+    "health.specializations": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "MioDottore \"Aree di competenza principali\": Psicologia scolastica, Psicoterapia sistemico relazionale."
+    },
+    "health.areas": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "MioDottore \"Patologie trattate\", all 16 listed (\"Attacco di panico\" pluralised). The reviewer may want to trim the clinical-sounding ones (Narcisismo, Psiconevrosi)."
+    },
+    "health.services": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "MioDottore \"Servizi e prezzi\" (11 named, \"+ 6 prestazioni\" hidden). Merged: \"Primo colloquio individuale\" into the individual colloquio; \"Colloquio psicologico online\" + \"Psicoterapia online\" into one. Dropped the umbrella entries \"Colloquio psicologico\" and \"Psicoterapia\". Prices left out on purpose."
+    },
+    "health.languages": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "\"Sono disponibile a tenere i colloqui in lingua inglese o in spagnolo.\""
+    },
+    "business.geo": {
+      "urls": [
+        "https://www.miodottore.it/profilo/maria-gallizzo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "The MioDottore profile's own map pin for the studio. OpenStreetMap knows Via Foria but not no. 228 (street-level match 40.8606002, 14.2636604, ~60 m away)."
+    }
+  }
+}
