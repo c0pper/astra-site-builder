@@ -1,7 +1,7 @@
-// Agency-wide settings. Open item in docs/PLAN.md: final agency name.
+// Agency-wide settings.
 export const AGENCY = {
   /** Shown in the spec-site demo banner ("demo realizzata da …"). Empty = omitted. */
-  name: '',
+  name: 'Simone Martin Marotta',
 };
 
 /**

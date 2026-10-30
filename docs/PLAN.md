@@ -89,6 +89,6 @@ Run on Salemme Pneumatici (Caserta), Gianfico Service (Pozzuoli) and Soccorso st
 
 ## Open items (need a decision when reached)
 
-- Agency name for the demo banner and the previews project name (`template/config.ts`); previews use `pages.dev` for now
+- Previews use `pages.dev`; a custom preview domain can be attached later
 - Email relay for live forms (Resend vs alternative)
 - Which CI runs the screenshot gate (GitHub Actions assumed)
