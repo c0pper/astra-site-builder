@@ -48,6 +48,7 @@ Registry-driven. Code identifiers are English; every visitor-facing label is Ita
 | automotive | `tyre-shop` | TireShop | Gommista |
 | automotive | `auto-repair` | AutoRepair | Officina meccanica |
 | automotive | `body-shop` | AutoBodyShop | Carrozzeria |
+| automotive | `auto-electrician` | AutoRepair | Elettrauto |
 | food-beverage | `bakery` | Bakery | Panificio |
 | food-beverage | `pastry-shop` | Bakery | Pasticceria |
 | fitness | `gym` | ExerciseGym | Palestra |
@@ -106,7 +107,7 @@ Sections with no data are **hidden**. Hero, contacts/hours, map and footer alway
 ### Skills
 
 - `/new-site "<name>" <comune> [link]`: research → `site.json` → build until green → deploy preview → REVIEW.md
-- `/batch-sites <csv>`: rows `(name, comune, link?)`. Outputs `batch-report.csv` (slug, preview URL, existing-site rating `none | social-only | outdated | decent`, confidence score, review flags). Ambiguous rows go to a `needs-disambiguation` list instead of being built. Lead discovery is out of scope.
+- `/batch-sites <csv>`: rows `(name, comune, link?)` or the lead-tool export (`Sector` → sub-type, `Google Maps` as anchor). Rows whose phone matches an existing site are skipped. Each row runs `/new-site` in its own subagent; outputs go to `leads/batches/<date>-<list>/`. Outputs `batch-report.csv` (slug, preview URL, existing-site rating `none | social-only | outdated | decent`, confidence score, review flags). Ambiguous rows go to a `needs-disambiguation` list instead of being built. Lead discovery is out of scope.
 - `/promote-site <slug>`: spec → live (see below)
 - `/renew-preview <slug>`: extend expiry
 - `/add-subtype`: scaffold a sub-type or category
@@ -114,7 +115,7 @@ Sections with no data are **hidden**. Hero, contacts/hours, map and footer alway
 ## Images and third-party content
 
 - Curated packs per sub-type (~15 images: enough for hero, about and a 6-photo gallery with variety between sites). Each pack has a `credits.json` (file, Italian alt text, author, source, licence, optional `roles`) and each site has a Crediti page.
-- Pack images fill the **hero and about** slots. The **gallery** shows the client's own photos (`sites/<slug>/assets/gallery/`). On spec sites without client photos, it shows up to 6 pack photos, visibly labelled ("Il nostro mestiere — Immagini illustrative"), because unlabelled stock would imply "this is our workshop". Live sites never show a stock gallery: it is replaced by client photos at promotion, or hidden.
+- Pack images fill the **hero and about** slots. The **gallery** shows the client's own photos (`sites/<slug>/assets/gallery/`). On spec sites without client photos, it shows up to 6 pack photos, visibly labelled ("Galleria — Immagini illustrative"), because unlabelled stock would imply "this is our workshop". Live sites never show a stock gallery: it is replaced by client photos at promotion, or hidden.
 - Sources: open-licence photos that allow commercial use and modification (CC0, public domain, CC BY, CC BY-SA), excluding photos flagged with personality-rights restrictions. The intended aggregator was [Openverse](https://openverse.org), but its search API timed out from our network, so the first packs come straight from Wikimedia Commons (Openverse's main source for this kind of photo). Attribution goes in `credits.json` and the Crediti page.
 - Each slot (hero, about, gallery) draws from the primary sub-type's pack first and falls back to secondary packs. A `centered` hero layout takes no photo. Selection runs at config time (`template/lib/site-images-plugin.ts`), so a build imports and emits only the photos it uses.
 - Pack sources are web-sized with `pnpm optimize:pack <subtype>` (max 1600px, mozjpeg q78, metadata including GPS stripped), because Astro copies each used original into the output.

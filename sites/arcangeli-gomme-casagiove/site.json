@@ -1,0 +1,177 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Arcangeli Gomme",
+    "legalName": "Arcangeli Gomme di Arcangeli Amedeo S.r.l.s.",
+    "vatNumber": "04034510612",
+    "address": {
+      "street": "Via Michele Fiano, 45",
+      "postalCode": "81022",
+      "city": "Casagiove",
+      "province": "CE"
+    },
+    "phone": "0823 460479",
+    "email": "arcangeligomme@virgilio.it",
+    "hours": {
+      "mon": [{ "open": "07:30", "close": "19:30" }],
+      "tue": [{ "open": "07:30", "close": "19:30" }],
+      "wed": [{ "open": "07:30", "close": "19:30" }],
+      "thu": [{ "open": "07:30", "close": "19:30" }],
+      "fri": [{ "open": "07:30", "close": "19:30" }],
+      "sat": [{ "open": "07:30", "close": "15:00" }],
+      "sun": [{ "open": "09:00", "close": "13:00" }]
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/share/1Bxw8Wp7cg/",
+      "instagram": "https://www.instagram.com/arcangeligomme"
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45",
+    "rating": {
+      "value": 4.5,
+      "count": 266,
+      "url": "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+    }
+  },
+  "theme": {
+    "palette": "blu-officina"
+  },
+  "copy": {
+    "headline": "Il tuo gommista a Casagiove",
+    "tagline": "Vendita pneumatici nuovi e usati, cambio gomme stagionale, riparazione cerchi in lega.",
+    "about": "Arcangeli Gomme è in Via Michele Fiano 45, a Casagiove. Vendiamo pneumatici nuovi e usati per auto, moto e cicli, e pneumatici ricostruiti e quattro stagioni.\n\nIn sede facciamo riparazione, montaggio e smontaggio delle gomme, cambio gomme stagionale, riparazione di cerchi in lega e meccanica leggera. Ti aiutiamo anche a scegliere i pneumatici termici per SUV, auto, furgoni e veicoli industriali.\n\nChiamaci allo 0823 460479 o passa in sede: siamo aperti anche la domenica mattina."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "description": "Pneumatici nuovi e usati per auto, moto e cicli."
+      },
+      {
+        "name": "Cambio gomme stagionale"
+      },
+      {
+        "name": "Montaggio e riparazione pneumatici",
+        "description": "Riparazione, montaggio e smontaggio delle gomme."
+      },
+      {
+        "name": "Pneumatici termici",
+        "description": "Assistenza nell'acquisto di pneumatici termici per SUV, auto, furgoni e veicoli industriali."
+      },
+      {
+        "name": "Pneumatici ricostruiti e quattro stagioni"
+      },
+      {
+        "name": "Riparazione cerchi in lega"
+      },
+      {
+        "name": "Meccanica leggera"
+      },
+      {
+        "name": "Finanziamenti in sede"
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.arcangeligomme.it/",
+        "https://www.paginegialle.it/arcangeligommece",
+        "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Trading name 'Arcangeli Gomme' on own site, PagineGialle and the Google listing"
+    },
+    "business.legalName": {
+      "urls": [
+        "https://www.arcangeligomme.it/",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04034510612"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Own-site footer 'ARCANGELI GOMME di ARCANGELI AMEDEO srls'; VIES registered name 'ARCANGELI GOMME DI ARCANGELI AMEDEO SRLS'"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://www.arcangeligomme.it/",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04034510612"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "'P.I. 04034510612' in own-site footer; VIES isValid=true, registered at Via Michele Fiano 45, 81022 Casagiove CE"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.arcangeligomme.it/dove-siamo",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04034510612",
+        "https://www.paginegialle.it/arcangeligommece",
+        "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Own site, VIES, PagineGialle and the lead row agree on Via Michele Fiano 45, 81022 Casagiove (CE). The lead row's comune 'Caserta' is the search area. Three older PagineGialle listings with the same phone give Via Quartiere Nuovo 43, Via Quartiere Vecchio 43 and Piazza S. Michele 45 (Casagiove): outvoted"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.arcangeligomme.it/contatti",
+        "https://www.paginegialle.it/arcangeligommece",
+        "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.email": {
+      "urls": [
+        "https://www.arcangeligomme.it/contatti"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.hours": {
+      "urls": [
+        "https://www.arcangeligomme.it/contatti",
+        "https://www.paginegialle.it/arcangeligommece"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Own site 'Orari di apertura': Lun-Ven 7:30-19:30, Sabato 7:30-15:00, Domenica 9:00-13:00. PagineGialle (same Italiaonline database) shows the same"
+    },
+    "business.socials": {
+      "urls": [
+        "https://www.arcangeligomme.it/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Facebook share link and Instagram @arcangeligomme linked from the own site's header/footer; the pages themselves were not fetched (login walls)"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row, not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Arcangeli+Gomme+Via+Michele+Fiano%2C+45"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.5 from 266 reviews, from the lead row (batch 2026-10-30-campania_leads, id 010)"
+    },
+    "automotive.services": {
+      "urls": [
+        "https://www.arcangeligomme.it/",
+        "https://www.arcangeligomme.it/cosa-facciamo"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "All on the own site. /cosa-facciamo list: 'Pneumatici auti, moto, cicli', 'Vendita e assistenza', 'Riparazioni cerchi in lega', 'Meccanica leggera', 'Finanziamenti in sede'; its text: 'riparazione, montaggio e smontaggio', 'pneumatici ricostruiti, gruppi termici per motoveicoli e pneumatici quattro stagioni', 'cambio gomme stagionale', 'pneumatici d'occasione'. Home: pneumatici 'nuovi ed usati', 'assistenza nell'acquisto di pneumatici termici per suv, auto, furgoni e veicoli industriali'. 'Vendita pneumatici' merges sales, 'Pneumatici auti, moto, cicli' and used tyres; 'Gruppi termici per motoveicoli' left out (unclear template wording, 8-service cap)"
+    }
+  }
+}

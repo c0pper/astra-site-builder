@@ -17,11 +17,11 @@ const eyebrow = `${label} a ${b.address.city}`;
   variant === 'centered' && (
     <section class="bg-primary text-on-primary">
       <div class="container-page py-20 text-center sm:py-28">
-        <p class="text-sm font-semibold tracking-widest uppercase opacity-80">{eyebrow}</p>
+        <p class="text-sm font-semibold tracking-widest uppercase">{eyebrow}</p>
         <h1 class="mx-auto mt-4 max-w-3xl text-4xl font-bold sm:text-6xl">{heading}</h1>
-        {site.copy.tagline && <p class="mx-auto mt-5 max-w-2xl text-lg opacity-90">{site.copy.tagline}</p>}
+        {site.copy.tagline && <p class="mx-auto mt-5 max-w-2xl text-lg">{site.copy.tagline}</p>}
         {b.rating && (
-          <p class="mt-5 text-sm opacity-90">
+          <p class="mt-5 text-sm">
             ★ {formatRating(b.rating.value)} · {b.rating.count} recensioni
           </p>
         )}

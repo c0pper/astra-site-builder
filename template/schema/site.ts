@@ -36,7 +36,14 @@ const business = z.strictObject({
     city: z.string().min(1),
     province: z.string().regex(/^[A-Z]{2}$/, 'Province: 2 uppercase letters, e.g. NA'),
   }),
-  geo: z.strictObject({ lat: z.number().min(-90).max(90), lng: z.number().min(-180).max(180) }).optional(),
+  geo: z
+    .strictObject({
+      lat: z.number().min(-90).max(90),
+      lng: z.number().min(-180).max(180),
+      /** Street-level match only (the geocoder did not know the house number): the map says so. */
+      approximate: z.boolean().default(false),
+    })
+    .optional(),
   phone: phone.optional(),
   whatsapp: phone.optional(),
   email: z.email().optional(),

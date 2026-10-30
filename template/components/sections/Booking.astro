@@ -12,7 +12,7 @@ const phone = booking.phone ?? site.business.phone;
   <div class="flex flex-col items-start gap-6 rounded-2xl bg-primary p-8 text-on-primary sm:flex-row sm:items-center sm:justify-between sm:p-10">
     <div>
       <h2 class="text-3xl font-bold">Prenota un appuntamento</h2>
-      <p class="mt-2 opacity-90">Scegli il momento che preferisci, senza attese in officina.</p>
+      <p class="mt-2">Scegli il momento che preferisci.</p>
     </div>
     <div class="flex flex-wrap gap-3">
       {booking.url && <a href={booking.url} class="btn bg-accent text-on-accent hover:opacity-90" rel="noopener">Prenota online</a>}

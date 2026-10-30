@@ -68,7 +68,11 @@ Run on Salemme Pneumatici (Caserta), Gianfico Service (Pozzuoli) and Soccorso st
 
 **Done:** 3 previews whose REVIEW.md is accurate (spot-check every flagged and unflagged fact).
 
-## 8. `/batch-sites`
+## 8. `/batch-sites` ✅
+
+Ran on 10 automotive leads from `leads/campania_leads.csv` (3 more were skipped as already built): 10 built and deployed, 0 ambiguous. Commands: `pnpm batch plan <csv>` and `pnpm batch report <batch>`; outputs under `leads/batches/` (gitignored). Findings: two "Auto repair" leads are car electricians (no sub-type yet), no lead got a map pin (Nominatim resolves only the street), and an auto-picked palette failed contrast in the centered hero (fixed in the template, now covered by `theme.test.ts`).
+
+Follow-ups done: `auto-electrician` (Elettrauto) sub-type with its own pack; generic services are labelled on the page as typical of the trade; `pnpm geocode` pins the address, or the street with a "Posizione indicativa" note; the stock gallery is titled "Galleria"; the batch report shows the real comune (the lead tool's Town is often only the search area).
 
 - CSV in; `batch-report.csv` + `needs-disambiguation` out; existing-site rating
 - Accept the existing lead-list format (`leads/campania_leads.csv`: Business, Sector, Town, Address, Phone, Google Maps, Web presence, …); `Google Maps` is the disambiguation anchor and `Sector` maps to the sub-type

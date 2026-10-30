@@ -1,0 +1,28 @@
+## Identity
+
+Confirmed on phone and address. Lead row (batch 2026-10-30-campania_leads, id 013): "I Gommisti Snc di Gregori Giusepppe & Figli", Via Belvedere 41/a, 84091 Battipaglia SA, 0828 300145, Google category "Negozio di pneumatici", 4.7 from 199 reviews.
+
+- PagineGialle https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c: "I Gommisti di Gregori Giuseppe & C. S.n.c.", Via Belvedere 41/A, 84091 Battipaglia, 0828 300145, category "Pneumatici - commercio e riparazione". Same phone and address. The listing is unclaimed: no hours, description, services, email or website.
+- VIES https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04365560657: valid, "I GOMMISTI DI GREGORI GIUSEPPE & C. S.N.C", Via Belvedere 41/A, 84091 Battipaglia SA. The P.IVA came from the PagineGialle page's "Rivendicala gratis" link parameter.
+
+No other candidate found. The Google name has a typo ("Giusepppe") and says "& Figli" where the registry says "& C."; same business.
+
+Sub-type: `tyre-shop`, backed by the Google category "Negozio di pneumatici" and the PagineGialle category "Pneumatici - commercio e riparazione". No source names auto-repair work, so no secondary sub-type.
+
+Slug and name: `i-gommisti-battipaglia`, `business.name` "I Gommisti" (the trading part shared by all listings, legal form and partner names dropped). No sign or logo was seen.
+
+## Searched, not found
+
+- Services: no source names any service (PagineGialle listing empty, no own site, no social page). The site shows the registry's generic tyre-shop services marked `generic: true`; confirm them with the owner.
+- `automotive.brands`: nothing found; no brand dealer locator result came up in web searches.
+- `hours`: not on PagineGialle (unclaimed listing); no other source. Section hidden.
+- `geo`: Nominatim matches Via Belvedere only at street level (several street segments, no house number, no named node for the shop), so left out.
+- `email`, `whatsapp`, `socials`: none found (web searches on the name, phone and P.IVA; PagineGialle).
+- `seasonalClosures`, `automotive.booking`: none stated anywhere.
+- Virgilio and altraopinione.org search URLs returned 404; web searches on the phone number, the name + Battipaglia, "Via Belvedere 41" and the P.IVA found nothing about this business.
+- Guessed domains igommisti.it, igommisti.com, igommistibattipaglia.it, igommistibattipaglia.com, gommistigregori.it: no response.
+- `theme.brandColors`: no logo or signage found; preset palette used.
+
+## Existing web presence
+
+**none**: no own website, no social pages found. Only an unclaimed PagineGialle listing and the Google Maps listing.

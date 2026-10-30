@@ -1,0 +1,125 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Quattrogomme",
+    "legalName": "Quatrogomme di Quattromani Carmine",
+    "vatNumber": "06850140630",
+    "address": {
+      "street": "Viale John Fitzgerald Kennedy, 301",
+      "postalCode": "80125",
+      "city": "Napoli",
+      "province": "NA"
+    },
+    "phone": "081 7628215",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+",
+    "rating": {
+      "value": 4.7,
+      "count": 160,
+      "url": "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+"
+    },
+    "geo": {
+      "lat": 40.8238549,
+      "lng": 14.1926986,
+      "approximate": true
+    }
+  },
+  "copy": {
+    "headline": "Il tuo gommista a Napoli",
+    "tagline": "Pneumatici in Viale Kennedy 301, a Napoli. Chiamaci allo 081 7628215.",
+    "about": "Quattrogomme è un negozio di pneumatici in Viale John Fitzgerald Kennedy 301, a Napoli.\n\nChiamaci allo 081 7628215 o passa in negozio."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "generic": true
+      },
+      {
+        "name": "Cambio gomme stagionale",
+        "generic": true
+      },
+      {
+        "name": "Equilibratura",
+        "generic": true
+      },
+      {
+        "name": "Riparazione forature",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+",
+        "https://www.paginegialle.it/napoli-na/pneumatici/quattrogomme-carmine-quattromani",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/06850140630"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Google listing name 'myGOM - QUATTROGOMME di QUATTROMANI CARMINE'; PagineGialle page slug 'quattrogomme-carmine-quattromani' (display name 'Quattromani Carmine'); VIES registered name 'QUATROGOMME DI QUATTROMANI CARMINE' (single T). The 'myGOM' prefix appears only on the Google listing and is left out of the name"
+    },
+    "business.legalName": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/06850140630"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "VIES registered name 'QUATROGOMME DI QUATTROMANI CARMINE', spelled with one T as registered. VIES registered address is Strada Vicinale Canosa 34B int. 1, 80078 Pozzuoli (registered seat, not the shop)"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/pneumatici/quattrogomme-carmine-quattromani",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/06850140630"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "P.IVA found only in a link parameter on the PagineGialle listing (not shown as page text); VIES isValid=true with the matching name 'QUATROGOMME DI QUATTROMANI CARMINE', but a registered address in Pozzuoli, not Viale Kennedy"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+",
+        "https://www.paginegialle.it/napoli-na/pneumatici/quattrogomme-carmine-quattromani"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Lead row (Google Maps) and PagineGialle ('Via Kennedy John Fitzgerald, 301 - 80125 Napoli (NA)') agree"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+",
+        "https://www.paginegialle.it/napoli-na/pneumatici/quattrogomme-carmine-quattromani"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row (batch 2026-10-30-campania_leads, id 022), not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=myGOM+-+QUATTROGOMME+di+QUATTROMANI+CARMINE+Viale+John+Fitzgerald+Kennedy%2C+301%2C+80125+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.7 from 160 reviews, from the lead row"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Viale+John+Fitzgerald+Kennedy&city=Napoli&postalcode=80125"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Viale John Fitzgerald Kennedy, Fuorigrotta, Municipalità 10, Napoli, Campania, 80125, Italia): OpenStreetMap has no house number 301 here."
+    }
+  }
+}

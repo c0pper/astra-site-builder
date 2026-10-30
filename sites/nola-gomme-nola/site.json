@@ -1,0 +1,139 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Nola Gomme",
+    "legalName": "Nola Gomme S.r.l.",
+    "vatNumber": "08504641211",
+    "address": {
+      "street": "Via Cimitile, 88",
+      "postalCode": "80035",
+      "city": "Nola",
+      "province": "NA"
+    },
+    "phone": "081 8231660",
+    "whatsapp": "338 4322419",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+",
+    "rating": {
+      "value": 4.7,
+      "count": 175,
+      "url": "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+"
+    },
+    "geo": {
+      "lat": 40.9345371,
+      "lng": 14.5280951,
+      "approximate": true
+    }
+  },
+  "copy": {
+    "headline": "Il tuo gommista a Nola",
+    "tagline": "Pneumatici in Via Cimitile 88, a Nola. Chiamaci o scrivici su WhatsApp.",
+    "about": "Nola Gomme è un negozio di pneumatici in Via Cimitile 88, a Nola.\n\nPer informazioni chiamaci allo 081 8231660 o scrivici su WhatsApp al 338 4322419."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "generic": true
+      },
+      {
+        "name": "Cambio gomme stagionale",
+        "generic": true
+      },
+      {
+        "name": "Equilibratura",
+        "generic": true
+      },
+      {
+        "name": "Riparazione forature",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+",
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08504641211"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "'NOLA GOMME srl' on the Google listing (lead row), 'Nola Gomme S.r.l.' on PagineGialle, 'NOLA GOMME SRL' on VIES"
+    },
+    "business.legalName": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08504641211",
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "VIES registered name 'NOLA GOMME SRL'; PagineGialle 'Nola Gomme S.r.l.'"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08504641211"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "P.IVA found in an encoded link parameter on the PagineGialle listing (not visible text); VIES isValid=true, 'NOLA GOMME SRL', Via Cimitile 84/86/88, 80035 Nola NA"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/08504641211",
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici",
+        "https://trova-aperto.it/nola/prezzo-gommeit-2633852",
+        "https://www.cylex-italia.it/nola/gomme%20auto.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "House number conflict. Via Cimitile 88: Google listing (lead row); Trova-Aperto and Cylex (both 403 on fetch, seen in search summaries only). Via Cimitile 84/86/88: VIES registry. Via Cimitile 82: PagineGialle (same phone). 88 kept as the majority value and contained in the registry's 84/86/88. CAP 80035 Nola on all sources"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+",
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "081 8231660 on the Google listing (lead row) and PagineGialle"
+    },
+    "business.whatsapp": {
+      "urls": [
+        "https://www.paginegialle.it/nola-na/pneumatici/nola-gomme-riparazione-vendita-pneumatici"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "PagineGialle lists 338 4322419 as second phone and as WhatsApp. Cylex (search summary only) gives the same mobile for Via Cimitile 88"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row, not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=NOLA+GOMME+srl+Via+Cimitile%2C+88%2C+80035+Nola+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.7 from 175 reviews, from the lead row (batch 2026-10-30-campania_leads, id 016)"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+Cimitile&city=Nola&postalcode=80035"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via Cimitile, Nola, Napoli, Campania, 80035, Italia): OpenStreetMap has no house number 88 here."
+    }
+  }
+}

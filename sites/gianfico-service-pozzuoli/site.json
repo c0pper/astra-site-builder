@@ -3,7 +3,9 @@
   "previewExpires": "2027-01-27",
   "category": "automotive",
   "subtype": "tyre-shop",
-  "secondarySubtypes": ["auto-repair"],
+  "secondarySubtypes": [
+    "auto-repair"
+  ],
   "business": {
     "name": "Gianfico Service",
     "legalName": "GIANFICO SERVICE S.R.L.",
@@ -16,12 +18,62 @@
     },
     "phone": "081 866 2070",
     "hours": {
-      "mon": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
-      "tue": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
-      "wed": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
-      "thu": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
-      "fri": [{ "open": "08:30", "close": "13:30" }, { "open": "14:30", "close": "19:00" }],
-      "sat": [{ "open": "08:30", "close": "13:00" }],
+      "mon": [
+        {
+          "open": "08:30",
+          "close": "13:30"
+        },
+        {
+          "open": "14:30",
+          "close": "19:00"
+        }
+      ],
+      "tue": [
+        {
+          "open": "08:30",
+          "close": "13:30"
+        },
+        {
+          "open": "14:30",
+          "close": "19:00"
+        }
+      ],
+      "wed": [
+        {
+          "open": "08:30",
+          "close": "13:30"
+        },
+        {
+          "open": "14:30",
+          "close": "19:00"
+        }
+      ],
+      "thu": [
+        {
+          "open": "08:30",
+          "close": "13:30"
+        },
+        {
+          "open": "14:30",
+          "close": "19:00"
+        }
+      ],
+      "fri": [
+        {
+          "open": "08:30",
+          "close": "13:30"
+        },
+        {
+          "open": "14:30",
+          "close": "19:00"
+        }
+      ],
+      "sat": [
+        {
+          "open": "08:30",
+          "close": "13:00"
+        }
+      ],
       "sun": []
     },
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+",
@@ -29,6 +81,11 @@
       "value": 4.7,
       "count": 231,
       "url": "https://www.google.com/maps/search/?api=1&query=GIANFICO+SERVICE+S.R.L.+Via+Montenuovo+Licola+Patria%2C+97%2C+80078+Pozzuoli+NA+"
+    },
+    "geo": {
+      "lat": 40.8458541,
+      "lng": 14.0734598,
+      "approximate": true
     }
   },
   "copy": {
@@ -38,16 +95,35 @@
   },
   "automotive": {
     "services": [
-      { "name": "Riparazione pneumatici e gonfiaggio con azoto" },
-      { "name": "Deposito pneumatici" },
-      { "name": "Servizio di montaggio mobile" },
-      { "name": "Soccorso stradale 24 ore su 24 per l'auto" },
-      { "name": "Tagliando e cambio olio" },
-      { "name": "Freni, ammortizzatori e assetti sportivi" },
-      { "name": "Climatizzatore e sanificazione abitacolo" },
-      { "name": "Batterie" }
+      {
+        "name": "Riparazione pneumatici e gonfiaggio con azoto"
+      },
+      {
+        "name": "Deposito pneumatici"
+      },
+      {
+        "name": "Servizio di montaggio mobile"
+      },
+      {
+        "name": "Soccorso stradale 24 ore su 24 per l'auto"
+      },
+      {
+        "name": "Tagliando e cambio olio"
+      },
+      {
+        "name": "Freni, ammortizzatori e assetti sportivi"
+      },
+      {
+        "name": "Climatizzatore e sanificazione abitacolo"
+      },
+      {
+        "name": "Batterie"
+      }
     ],
-    "brands": ["Pirelli", "Metzeler"]
+    "brands": [
+      "Pirelli",
+      "Metzeler"
+    ]
   },
   "sources": {
     "business.name": {
@@ -150,6 +226,14 @@
       "retrieved": "2026-10-29",
       "confidence": "medium",
       "note": "Listed in the brands' own dealer locators (Metzeler is a Pirelli brand, one database)."
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+Montenuovo+Licola+Patria&city=Pozzuoli&postalcode=80078"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via Montenuovo Licola Patria, La Schiana, Lucrino, Pozzuoli, Napoli, Campania, 80072, Italia): OpenStreetMap has no house number 97 here."
     }
   }
 }

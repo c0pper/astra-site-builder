@@ -1,0 +1,187 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Montuori Corrado",
+    "vatNumber": "06910911210",
+    "address": {
+      "street": "Vico Acitillo, 62/64",
+      "postalCode": "80128",
+      "city": "Napoli",
+      "province": "NA"
+    },
+    "phone": "081 5606578",
+    "hours": {
+      "mon": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        },
+        {
+          "open": "14:00",
+          "close": "19:00"
+        }
+      ],
+      "tue": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        },
+        {
+          "open": "14:00",
+          "close": "19:00"
+        }
+      ],
+      "wed": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        },
+        {
+          "open": "14:00",
+          "close": "19:00"
+        }
+      ],
+      "thu": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        },
+        {
+          "open": "14:00",
+          "close": "19:00"
+        }
+      ],
+      "fri": [
+        {
+          "open": "08:00",
+          "close": "13:00"
+        },
+        {
+          "open": "14:00",
+          "close": "19:00"
+        }
+      ],
+      "sat": [
+        {
+          "open": "08:30",
+          "close": "13:00"
+        }
+      ],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56",
+    "rating": {
+      "value": 4.8,
+      "count": 150,
+      "url": "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56"
+    },
+    "geo": {
+      "lat": 40.8481571,
+      "lng": 14.223528,
+      "approximate": true
+    }
+  },
+  "theme": {},
+  "copy": {
+    "headline": "Il tuo gommista a Napoli",
+    "tagline": "In Vico Acitillo 62/64, a Napoli. Chiamaci allo 081 5606578.",
+    "about": "Montuori Corrado è il gommista di Vico Acitillo 62/64, a Napoli.\n\nPer informazioni chiamaci allo 081 5606578 o passa da noi."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "generic": true
+      },
+      {
+        "name": "Cambio gomme stagionale",
+        "generic": true
+      },
+      {
+        "name": "Equilibratura",
+        "generic": true
+      },
+      {
+        "name": "Riparazione forature",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56",
+        "https://www.paginegialle.it/napoli-na/pneumatici/montuori-corrado",
+        "https://www.oraridiapertura24.it/filiale/Napoli-Montuori%2520Corrado-267725U.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "'Montuori Corrado' on the lead row (Google Maps), PagineGialle (ragione sociale and insegna) and OrariDiApertura24. No sign or logo seen"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/pneumatici/montuori-corrado"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "P.IVA read from the base64 data of the PagineGialle page's claim-listing link (with name, address and phone matching). VIES returns isValid: false, which is no evidence either way. No second source found"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56",
+        "https://www.paginegialle.it/napoli-na/pneumatici/montuori-corrado",
+        "https://www.oraridiapertura24.it/filiale/Napoli-Montuori%2520Corrado-267725U.html",
+        "https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=Vico+Acitillo+62,+80128+Napoli"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "PagineGialle and OrariDiApertura24: 'Vico Acitillo 62/64, 80128 Napoli'. The lead row (Google Maps) reads 'Vico Acitillo, 62 64 56': same street, with an extra civic number 56 that no other source lists. CAP 80128 also on the OSM segment of Vico Acitillo nearest these numbers (the street spans 80127 and 80128)"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56",
+        "https://www.paginegialle.it/napoli-na/pneumatici/montuori-corrado",
+        "https://www.oraridiapertura24.it/filiale/Napoli-Montuori%2520Corrado-267725U.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Lead row (Google Maps), PagineGialle and OrariDiApertura24 agree"
+    },
+    "business.hours": {
+      "urls": [
+        "https://www.oraridiapertura24.it/filiale/Napoli-Montuori%2520Corrado-267725U.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Only OrariDiApertura24 lists hours (Mon-Fri 08:00-13:00 and 14:00-19:00, Sat 08:30-13:00, Sun closed). PagineGialle has no hours"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row (batch 2026-10-30-campania_leads, id 019), not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Montuori+Corrado+Vico+Acitillo%2C+62+64+56"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.8 from 150 reviews, from the lead row"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Vico+Acitillo&city=Napoli&postalcode=80128"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Vico Acitillo, Rione Antignano, Vomero, Municipalità 5, Napoli, Campania, 80128, Italia): OpenStreetMap has no house number 62/64 here."
+    }
+  }
+}

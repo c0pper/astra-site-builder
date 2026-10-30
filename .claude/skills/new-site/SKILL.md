@@ -9,7 +9,7 @@ disable-model-invocation: true
 
 Turns a business name and comune into a deployed spec preview at `<PREVIEWS_ORIGIN>/<slug>/` plus `sites/<slug>/REVIEW.md` for a human to check. The content rules in the root `CLAUDE.md` bind every step: a fact goes into `site.json` only with its source, and copy states only those facts.
 
-Input: business name and comune (required); an **anchor** (Google Maps link, website, phone, or a lead row from `leads/*.csv` with address, phone, rating) when available. A lead row's `Sector` maps to the sub-type (`Tyre shop` → `tyre-shop`, `Auto repair` → `auto-repair`, `Body shop` → `body-shop`). Its `Town` may read "Caserta (search area)": that is the search area, not necessarily the comune.
+Input: business name and comune (required); an **anchor** (Google Maps link, website, phone, or a lead row from `leads/*.csv` with address, phone, rating) when available. A lead row's `Sector` maps to the sub-type (`Tyre shop` → `tyre-shop`, `Auto repair` → `auto-repair`, or `auto-electrician` when its Google category is about car electrics, `Body shop` → `body-shop`). Its `Town` may read "Caserta (search area)": that is the search area, not necessarily the comune.
 
 Write `site.json` and `notes.md` with the Write tool; long shell heredocs break on Windows.
 
@@ -37,7 +37,6 @@ Fill `business.*` and the category extension (`automotive.*`), each fact with it
 - Directories: paginegialle.it (its pages also carry the P.IVA), altraopinione.org, Google snippets in search results.
 - `legalName` and `vatNumber`: once a P.IVA turns up anywhere, confirm it with VIES (`https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/<piva>`, JSON with the registered name and address). VIES lists only businesses registered for intra-EU trade, so `isValid: false` is no evidence either way: keep the P.IVA at the confidence its other sources give. atoka.io and reportaziende.it company pages also work; ufficiocamerale.it and kompass block fetches.
 - `automotive.brands` and services: tyre and parts brand dealer locators (Pirelli, Metzeler, Michelin, …).
-- `geo`: Nominatim (`https://nominatim.openstreetmap.org/search?format=json&q=<address>`).
 
 **Confidence:**
 - `high`: the business states it itself (own site, own social page), or two independent sources agree.
@@ -52,9 +51,9 @@ Fill `business.*` and the category extension (`automotive.*`), each fact with it
 
 **Hours:** include a day only when a source states it, including `[]` for closed. A day no source mentions stays out (shown as unknown).
 
-**Geo:** include it only when the geocoder matches the house number or a named place for the business (an OSM node with its name). A street-level match is left out; the map section then shows the address and a directions link.
+**Geo:** once the address is final, run `pnpm geocode <slug>`. It pins the house number when OpenStreetMap knows it, otherwise the street (`approximate`, low confidence; the map says "Posizione indicativa"), otherwise nothing. An OSM place named for the business beats both: set it by hand at `medium`.
 
-**Services:** a sourced service needs a source that names it. Directory keyword lists (the long "marchi trattati / servizi" blocks on paginegialle and virgilio) are SEO filler: not a source for services or brands. Use at most 8 services, dropping the vaguest ("Meccanico") and merging close ones ("Freni e ammortizzatori") with the original names in the source note. When research finds no service at all, use the registry's `genericServices` for the sub-types instead, marked `"generic": true`; with even one sourced service, list sourced services only.
+**Services:** a sourced service needs a source that names it. The trade's own name ("Elettrauto", "Gommista") is the sub-type, not a service. Directory keyword lists (the long "marchi trattati / servizi" blocks on paginegialle and virgilio) are SEO filler: not a source for services or brands. Use at most 8 services, dropping the vaguest ("Meccanico") and merging close ones ("Freni e ammortizzatori") with the original names in the source note. When research finds no service at all, use the registry's `genericServices` for the sub-types instead, marked `"generic": true` (the page labels them as typical of the trade, to be confirmed); with even one sourced service, list sourced services only.
 
 **Leave out** what no source states: an empty field hides its section, which is the intended result. Facts that have no field (dealer networks, founding year from a registry) go in notes.md only. Never copy review text, never download images or logos. Set `theme.brandColors` only from the business's logo or signage, never from a directory-made template site's accent colour.
 

@@ -11,13 +11,15 @@
     "check:registry": "node scripts/check-registry.mjs",
     "screenshot": "node scripts/screenshot.mjs",
     "optimize:pack": "node scripts/optimize-pack.mjs",
-    "test": "node --test \"template/**/*.test.ts\"",
+    "test": "node --test \"template/**/*.test.ts\" \"scripts/**/*.test.mjs\"",
     "lighthouse": "node scripts/lighthouse.mjs",
     "visual": "node scripts/visual.mjs",
     "gate": "node scripts/gate.mjs",
     "deploy:preview": "node scripts/deploy-preview.mjs",
     "scaffold": "node scripts/scaffold-site.mjs",
-    "review": "node scripts/review.mjs"
+    "review": "node scripts/review.mjs",
+    "batch": "node scripts/batch.mjs",
+    "geocode": "node scripts/geocode.mjs"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",

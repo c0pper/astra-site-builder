@@ -1,0 +1,159 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "auto-electrician",
+  "secondarySubtypes": [
+    "auto-repair"
+  ],
+  "business": {
+    "name": "Taurino Installazioni",
+    "address": {
+      "street": "Via Privata Luigi Sapio, 14/A",
+      "postalCode": "80055",
+      "city": "Portici",
+      "province": "NA"
+    },
+    "phone": "081 776 1537",
+    "hours": {
+      "mon": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "tue": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "wed": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "thu": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "fri": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "sat": [
+        {
+          "open": "09:00",
+          "close": "13:00"
+        }
+      ],
+      "sun": []
+    },
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+",
+    "rating": {
+      "value": 4.7,
+      "count": 204,
+      "url": "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+"
+    }
+  },
+  "copy": {
+    "headline": "Elettrauto e officina a Portici",
+    "tagline": "Elettrauto a Portici, in Via Privata Luigi Sapio 14/A. Chiamaci o passa in officina.",
+    "about": "Taurino Installazioni è un'officina autoriparazioni con servizio di elettrauto a Portici, in Via Privata Luigi Sapio 14/A.\n\nSiamo aperti dal lunedì al venerdì dalle 9:00 alle 18:30 e il sabato dalle 9:00 alle 13:00. Per informazioni chiamaci allo 081 776 1537."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Diagnosi elettronica",
+        "generic": true
+      },
+      {
+        "name": "Batterie",
+        "generic": true
+      },
+      {
+        "name": "Impianto elettrico",
+        "generic": true
+      },
+      {
+        "name": "Alternatori e motorini di avviamento",
+        "generic": true
+      },
+      {
+        "name": "Luci e fari",
+        "generic": true
+      },
+      {
+        "name": "Ricarica climatizzatore",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+",
+        "https://www.reteimprese.it/elettrauto/portici/azienda/507988",
+        "https://www.youdriver.com/taurino-installazioni-35545/"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Google Maps (lead row) and reteimprese.it both name it Taurino Installazioni; youdriver.com too (seen only in a search summary, page returned 503). The Italiaonline directories (paginegialle, paginebianche, virgilio) list the same phone as '(Elettrauto) Taurino Domenico', apparently the owner's name; their listing links the old site taurino-installazioni.business.site."
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+",
+        "https://www.reteimprese.it/elettrauto/portici/azienda/507988",
+        "https://www.paginegialle.it/portici-na/elettrauto/taurino-domenico",
+        "https://aziende.virgilio.it/elettrauto/portici-na/taurino_2",
+        "https://www.misterimprese.it/campania/napoli/portici/elettrauto-officine-riparazione/1667882.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "All agree on Luigi Sapio 14/A, 80055 Portici; the street name varies: Google 'Traversa Privata Rione Luigi, Via Privata Luigi Sapio, 14/a'; reteimprese 'Traversa Privata Rione Luigi Sapio, 14/a'; paginegialle/virgilio 'Via III Trav.Privata Luigi Sapio, 14/A'; misterimprese 'Traversa Iii Sapio, 14/A'; OSM names the road 'Viale Privato Luigi Sapio'. A second paginegialle/paginebianche listing with the same phone gives Corso Garibaldi 254, 80055 Portici (likely an older address). OSM/Nominatim shows postcode 80056 for the road, but the way has no postcode tag (computed value), so the 80055 every source states is kept."
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+",
+        "https://www.reteimprese.it/elettrauto/portici/azienda/507988",
+        "https://www.paginegialle.it/portici-na/elettrauto/taurino-domenico",
+        "https://www.paginegialle.it/portici-na/elettrauto/elettrauto-taurino-domenico",
+        "https://paginebianche.it/portici/elettrauto-taurino-domenico.13290139",
+        "https://aziende.virgilio.it/elettrauto/portici-na/taurino_2",
+        "https://www.misterimprese.it/campania/napoli/portici/elettrauto-officine-riparazione/1667882.html"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.hours": {
+      "urls": [
+        "https://www.paginegialle.it/portici-na/elettrauto/elettrauto-taurino-domenico",
+        "https://paginebianche.it/portici/elettrauto-taurino-domenico.13290139"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "One database (Italiaonline): Mon-Fri 09:00-18:30, Sat 09:00-13:00, Sun closed. This listing carries the older Corso Garibaldi 254 address, so the hours may be stale; confirm with the client."
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "From the lead row (batch 2026-10-30-campania_leads, id 011)."
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Taurino+Installazioni+Traversa+Privata+Rione+Luigi%2C+Via+Privata+Luigi+Sapio%2C+14%2Fa%2C+80055+Portici+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.7 from 204 reviews, per the lead row."
+    }
+  }
+}

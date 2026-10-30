@@ -7,7 +7,8 @@ import { loadSite } from '../../lib/site';
 const { site } = loadSite();
 const b = site.business;
 const geo = b.geo;
-const d = 0.004;
+// A street-level pin can sit a few hundred metres off: show more of the area around it.
+const d = geo?.approximate ? 0.008 : 0.004;
 const osmSrc = geo
   ? `https://www.openstreetmap.org/export/embed.html?bbox=${geo.lng - d},${geo.lat - d},${geo.lng + d},${geo.lat + d}&layer=mapnik&marker=${geo.lat},${geo.lng}`
   : undefined;
@@ -28,6 +29,11 @@ const osmSrc = geo
           <p class="max-w-sm text-sm text-muted">La mappa viene caricata da openstreetmap.org.</p>
         </div>
       </div>
+    )
+  }
+  {
+    geo?.approximate && (
+      <p class="mt-3 text-sm text-muted">Posizione indicativa: per l'indirizzo esatto usa «Ottieni indicazioni».</p>
     )
   }
 </Section>

@@ -1,0 +1,129 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "I Gommisti",
+    "legalName": "I Gommisti di Gregori Giuseppe & C. S.n.c.",
+    "vatNumber": "04365560657",
+    "address": {
+      "street": "Via Belvedere, 41/a",
+      "postalCode": "84091",
+      "city": "Battipaglia",
+      "province": "SA"
+    },
+    "phone": "0828 300145",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+",
+    "rating": {
+      "value": 4.7,
+      "count": 199,
+      "url": "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+"
+    },
+    "geo": {
+      "lat": 40.6149697,
+      "lng": 14.9673706,
+      "approximate": true
+    }
+  },
+  "theme": {},
+  "copy": {
+    "headline": "Il tuo gommista a Battipaglia",
+    "tagline": "In Via Belvedere 41/a, a Battipaglia. Chiamaci allo 0828 300145.",
+    "about": "I Gommisti è il gommista di Via Belvedere 41/a, a Battipaglia.\n\nPer informazioni chiamaci allo 0828 300145 o passa da noi."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "generic": true
+      },
+      {
+        "name": "Cambio gomme stagionale",
+        "generic": true
+      },
+      {
+        "name": "Equilibratura",
+        "generic": true
+      },
+      {
+        "name": "Riparazione forature",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+",
+        "https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04365560657"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "'I Gommisti' is the trading part of every listed name: Google 'I Gommisti Snc di Gregori Giusepppe & Figli' (lead row), PagineGialle and VIES 'I Gommisti di Gregori Giuseppe & C. S.n.c.'. No sign or logo seen, so the exact shop-sign name is unconfirmed"
+    },
+    "business.legalName": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04365560657",
+        "https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "VIES (isValid: true) registered name 'I GOMMISTI DI GREGORI GIUSEPPE & C. S.N.C', same on PagineGialle. The Google listing's 'Snc di Gregori Giusepppe & Figli' (typo, '& Figli') is not the registered name"
+    },
+    "business.vatNumber": {
+      "urls": [
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04365560657",
+        "https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "P.IVA found in the PagineGialle page's claim-listing link, confirmed valid by VIES with matching name and address (Via Belvedere 41/A, 84091 Battipaglia SA)"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+",
+        "https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c",
+        "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/04365560657"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Via Belvedere 41/a, 84091 Battipaglia SA on the lead row (Google Maps), PagineGialle and VIES"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+",
+        "https://www.paginegialle.it/battipaglia-sa/pneumatici/i-gommisti-di-gregori-giuseppe-and-c-s-n-c"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Lead row (Google Maps) and PagineGialle agree"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row (batch 2026-10-30-campania_leads, id 013), not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=I+Gommisti+Snc+di+Gregori+Giusepppe+%26+Figli+Via+Belvedere%2C+41%2Fa%2C+84091+Battipaglia+SA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.7 from 199 reviews, from the lead row"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+Belvedere&city=Battipaglia&postalcode=84091"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via Belvedere, Rione Belvedere, Battipaglia, Salerno, Campania, 84091, Italia): OpenStreetMap has no house number 41/a here."
+    }
+  }
+}

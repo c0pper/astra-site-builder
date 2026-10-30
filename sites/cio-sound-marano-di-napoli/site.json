@@ -1,0 +1,116 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "auto-electrician",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "C.I.O. Sound",
+    "address": {
+      "street": "Via San Rocco, 194",
+      "postalCode": "80016",
+      "city": "Marano di Napoli",
+      "province": "NA"
+    },
+    "phone": "081 576 0681",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+",
+    "rating": {
+      "value": 4.6,
+      "count": 186,
+      "url": "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+"
+    },
+    "geo": {
+      "lat": 40.8971488,
+      "lng": 14.1682624,
+      "approximate": true
+    }
+  },
+  "copy": {
+    "headline": "Elettrauto a Marano di Napoli",
+    "tagline": "Elettrauto a Marano di Napoli, in Via San Rocco 194. Chiamaci o passa in officina.",
+    "about": "C.I.O. Sound è un'officina di elettrauto a Marano di Napoli, in Via San Rocco 194.\n\nPer informazioni chiamaci allo 081 576 0681."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Diagnosi elettronica",
+        "generic": true
+      },
+      {
+        "name": "Batterie",
+        "generic": true
+      },
+      {
+        "name": "Impianto elettrico",
+        "generic": true
+      },
+      {
+        "name": "Alternatori e motorini di avviamento",
+        "generic": true
+      },
+      {
+        "name": "Luci e fari",
+        "generic": true
+      },
+      {
+        "name": "Ricarica climatizzatore",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+",
+        "https://www.paginegialle.it/marano-di-napoli-na/c-i-o-sound-vitale-massimo",
+        "https://www.paginebianche.it/marano-di-napoli/c-i-o-sound-vitale-massimo.12582328"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Google Maps (lead row) lists 'C.I.O. Sound Di Vitale Massimo'; paginegialle/paginebianche (one Italiaonline database) list 'C.I.O. Sound'. 'Di Vitale Massimo' is the sole-proprietor suffix, dropped from the display name."
+    },
+    "business.address": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+",
+        "https://www.paginegialle.it/marano-di-napoli-na/c-i-o-sound-vitale-massimo",
+        "https://www.paginebianche.it/marano-di-napoli/c-i-o-sound-vitale-massimo.12582328"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Google: 'Via S. Rocco, 194, 80016 Marano di Napoli NA'; paginegialle/paginebianche: 'Via San Rocco, 194 - 80016 Marano di Napoli (NA)'. Nominatim shows computed postcodes 80012/80010 for segments of Via San Rocco (no postcode tag on the ways); 80016, the comune's CAP stated by every source, is kept."
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+",
+        "https://www.paginegialle.it/marano-di-napoli-na/c-i-o-sound-vitale-massimo",
+        "https://www.paginebianche.it/marano-di-napoli/c-i-o-sound-vitale-massimo.12582328"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "From the lead row (batch 2026-10-30-campania_leads, id 020)."
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=C.I.O.+Sound+Di+Vitale+Massimo+Via+S.+Rocco%2C+194%2C+80016+Marano+di+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.6 from 186 reviews, per the lead row."
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+San+Rocco&city=Marano+di+Napoli&postalcode=80016"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via San Rocco, Marano di Napoli, Napoli, Campania, 80012, Italia): OpenStreetMap has no house number 194 here."
+    }
+  }
+}

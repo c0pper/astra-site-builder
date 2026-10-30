@@ -1,0 +1,119 @@
+{
+  "status": "spec",
+  "previewExpires": "2027-01-28",
+  "category": "automotive",
+  "subtype": "tyre-shop",
+  "secondarySubtypes": [],
+  "business": {
+    "name": "Gommista Esposito Domenico",
+    "address": {
+      "street": "Via Pigna, 80",
+      "postalCode": "80128",
+      "city": "Napoli",
+      "province": "NA"
+    },
+    "phone": "081 7141902",
+    "whatsapp": "331 5736334",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+",
+    "rating": {
+      "value": 4.4,
+      "count": 195,
+      "url": "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+"
+    },
+    "geo": {
+      "lat": 40.8488553,
+      "lng": 14.2159878,
+      "approximate": true
+    }
+  },
+  "theme": {},
+  "copy": {
+    "headline": "Il tuo gommista a Napoli",
+    "tagline": "In Via Pigna, a Napoli. Chiamaci allo 081 7141902 o scrivici su WhatsApp.",
+    "about": "Gommista Esposito Domenico è in Via Pigna, a Napoli.\n\nPer informazioni chiamaci allo 081 7141902 o scrivici su WhatsApp al 331 5736334."
+  },
+  "automotive": {
+    "services": [
+      {
+        "name": "Vendita pneumatici",
+        "generic": true
+      },
+      {
+        "name": "Cambio gomme stagionale",
+        "generic": true
+      },
+      {
+        "name": "Equilibratura",
+        "generic": true
+      },
+      {
+        "name": "Riparazione forature",
+        "generic": true
+      }
+    ]
+  },
+  "sources": {
+    "business.name": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/pneumatici/esposito-domenico",
+        "https://aziende.virgilio.it/pneumatici/napoli-na/esposito-domenico"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "'Gommista Esposito Domenico' on PagineGialle and Virgilio (one Italiaonline database, counts once). The Google listing (lead row) is named only 'Gommista'. No sign or logo seen"
+    },
+    "business.address": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/pneumatici/esposito-domenico",
+        "https://aziende.virgilio.it/pneumatici/napoli-na/esposito-domenico",
+        "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+",
+        "https://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q=Via+Pigna+80,+Napoli"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Conflict, no majority: Google Maps (lead row) 'Via Pigna, 42, 80126 Napoli'; PagineGialle and Virgilio (one Italiaonline database) 'Via Pigna, 80, 80128 Napoli'. Same street and same phone 081 7141902 on both. Italiaonline value kept because OpenStreetMap places Via Pigna in CAP 80127/80128, not 80126. House number to confirm with the owner"
+    },
+    "business.phone": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+",
+        "https://www.paginegialle.it/napoli-na/pneumatici/esposito-domenico",
+        "https://aziende.virgilio.it/pneumatici/napoli-na/esposito-domenico"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "high",
+      "note": "Lead row (Google Maps) and PagineGialle/Virgilio agree. PagineGialle also lists 081 2781664"
+    },
+    "business.whatsapp": {
+      "urls": [
+        "https://www.paginegialle.it/napoli-na/pneumatici/esposito-domenico"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "331 5736334 marked as WhatsApp on PagineGialle only"
+    },
+    "business.googleMapsUrl": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "Search link from the lead row (batch 2026-10-30-campania_leads, id 029), not a place link"
+    },
+    "business.rating": {
+      "urls": [
+        "https://www.google.com/maps/search/?api=1&query=Gommista+Via+Pigna%2C+42%2C+80126+Napoli+NA+"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "medium",
+      "note": "4.4 from 195 reviews, from the lead row"
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+Pigna&city=Napoli&postalcode=80128"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via Pigna, Arenella, Municipalità 5, Napoli, Campania, 80128, Italia): OpenStreetMap has no house number 80 here."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Automotive tone guide
 
-Applies to: `tyre-shop`, `auto-repair`, `body-shop`. Read with the content rules in the root `CLAUDE.md`: copy states only facts that have a source in `site.json`.
+Applies to: `tyre-shop`, `auto-repair`, `auto-electrician`, `body-shop`. Read with the content rules in the root `CLAUDE.md`: copy states only facts that have a source in `site.json`.
 
 ## Voice
 

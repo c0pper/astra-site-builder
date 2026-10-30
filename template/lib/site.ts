@@ -15,7 +15,7 @@ export interface SiteContext {
   /** Visitor-facing sub-type label, e.g. "Gommista". */
   label: string;
   /** The service list of the site's category extension, if any. */
-  services: { name: string; description?: string }[];
+  services: { name: string; description?: string; generic?: boolean }[];
 }
 
 let cached: SiteContext | undefined;

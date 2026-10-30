@@ -2,11 +2,15 @@
 import Section from '../Section.astro';
 import { loadSite } from '../../lib/site';
 
-const { services, theme } = loadSite();
+const { services, theme, label } = loadSite();
 const variant = theme.variants.services;
+// Generic services (spec sites only) are what the trade usually offers, not what this business confirmed: say so.
+const intro = services.some((s) => s.generic)
+  ? `Servizi tipici di ${label === 'Officina meccanica' ? "un'officina meccanica" : `un ${label.toLowerCase()}`}: l'elenco sarà confermato con il titolare.`
+  : undefined;
 ---
 
-<Section id="servizi" title="Servizi">
+<Section id="servizi" title="Servizi" intro={intro}>
   {
     variant === 'grid' ? (
       <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -59,6 +59,11 @@
       "value": 5,
       "count": 131,
       "url": "https://www.google.com/maps/search/?api=1&query=Soccorso+stradale+BOSCIA+Via+Torre+della+Catena%2C+153%2C+82100+Benevento+BN+"
+    },
+    "geo": {
+      "lat": 41.1299964,
+      "lng": 14.7703769,
+      "approximate": true
     }
   },
   "copy": {
@@ -152,6 +157,14 @@
       "retrieved": "2026-10-29",
       "confidence": "high",
       "note": "Maps listing name \"Soccorso stradale BOSCIA\" and PagineGialle category Autosoccorso. No other service is named by any source."
+    },
+    "business.geo": {
+      "urls": [
+        "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=1&countrycodes=it&street=Via+Torre+della+Catena&city=Benevento&postalcode=82100"
+      ],
+      "retrieved": "2026-10-30",
+      "confidence": "low",
+      "note": "Street-level match (Via Torre della Catena, Triggio, Contrada Santa Clementina, Benevento, Campania, 82100, Italia): OpenStreetMap has no house number 153 here."
     }
   }
 }
